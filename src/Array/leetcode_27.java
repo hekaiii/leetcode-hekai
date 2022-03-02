@@ -12,9 +12,11 @@ import javax.xml.crypto.dsig.keyinfo.KeyName;
  */
 public class leetcode_27 {
     public static void main(String[] args) {
-
+        int[] a = new int[]{0,1,2,3,4,5,2};
+        int i = removeElement2(a, 2);
+        System.out.println(i);
     }
-    public int removeElement(int[] nums, int val) {
+    public static int removeElement(int[] nums, int val) {
         int len = nums.length;
         int count = 1;
         for (int i = 0; i < len; i++) {
@@ -28,7 +30,7 @@ public class leetcode_27 {
         }
         return len;
     }
-    public int removeElement1(int[] nums, int val) {
+    public static int removeElement1(int[] nums, int val) {
         int slow = 0;
         for (int fast = 0; fast < nums.length; fast++) {
             if (nums[fast] != val) {
@@ -37,5 +39,13 @@ public class leetcode_27 {
         }
         return slow;
     }
-
+    public static int removeElement2(int[] nums, int val) {
+        int slow = 0;
+        for (int fast = 0; fast < nums.length; fast++) {
+            if (nums[fast] != val) {
+                nums[slow++] = nums[fast];
+            }
+        }
+        return slow;
+    }
 }
