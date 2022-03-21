@@ -19,7 +19,7 @@ public class leetcode_459 {
     public boolean repeatedSubstringPattern(String s) {
         int[] next = new int[s.length()];
         getNext(next, s);
-//        Arrays.sort(next);
+//        Arrays.sort(next);a
         if (next[s.length() - 1] < 1) {
             return false;
         }
