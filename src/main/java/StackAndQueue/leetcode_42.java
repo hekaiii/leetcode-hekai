@@ -12,31 +12,29 @@ import java.util.Scanner;
 
 public class leetcode_42 {
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.jdbc.Driver");
-        String url="jdbc:mysql://144.34.186.17:3306/mysql_test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8";
-        String username="root";
-        String password="hekaig24";
-        Connection con= DriverManager.getConnection(url,username,password);
-        Scanner sc=new Scanner(System.in);
-        System.out.println("请输入用户名：");
-        String user=sc.nextLine();
-        System.out.println("请输入密码：");
-        String pwd=sc.nextLine();
-        String sql="select * from index_demo where id=? and c1=?";
-        PreparedStatement ps=con.prepareStatement(sql);
-        ps.setObject(1, user);
-        ps.setObject(2, pwd);
-
-        ResultSet rs=ps.executeQuery();
-        while(rs.next()){
-            System.out.println(rs.getString("id")+"   "+rs.getString("c1")+"   "+rs.getString("c2"));
+    public int trap(int[] height) {
+        int sum = 0;
+        for (int i = 0; i < height.length; i++) {
+            if (i == 0 || i == height.length - 1) {
+                continue;
+            }
+            int lheight = 0;
+            int rheight = 0;
+            for (int r = i - 1; r >= 0; r--) {
+                if (height[r] > rheight) {
+                    rheight = height[r];
+                }
+            }
+            for (int j = i + 1; j <= height.length - 1; j++) {
+                if (height[j] > lheight) {
+                    lheight = height[j];
+                }
+            }
+            int h = Math.min(lheight, rheight) - height[i];
+            if (h > 0) {
+                sum += h;
+            }
         }
-        rs.close();
-        ps.close();
-        con.close();
+        return sum;
     }
-//    public int trap(int[] height) {
-//
-//    }
 }
