@@ -38,7 +38,7 @@ public class leetcode_102 {
 
     public static void main(String[] args) {
         leetcode_102 tree = new leetcode_102();
-        int input[]= {1,2,3,4,5,6,7,null};
+        int input[]= {1,2,3,4,5,6,7};
         for(int i=0; i<input.length; i++) {
             tree.insert(input[i]);
         }

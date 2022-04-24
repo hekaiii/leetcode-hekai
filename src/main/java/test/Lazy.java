@@ -17,6 +17,7 @@ public enum Lazy {
 
 
     public static void main(String[] args) {
+        System.out.println(ClassLoader.getSystemClassLoader());
         for (int i = 0; i < 10; i++) {
             new Thread(() -> {
                 Lazy.getInstance();
