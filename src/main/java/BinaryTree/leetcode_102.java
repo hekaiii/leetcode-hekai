@@ -4,9 +4,7 @@ import sun.reflect.generics.tree.Tree;
 import test.BinarySearchTree;
 
 import javax.swing.tree.TreeNode;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Level;
 
 /**
@@ -14,6 +12,7 @@ import java.util.logging.Level;
  */
 public class leetcode_102 {
     private TreeNode root;
+    Deque<TreeNode> deque;
     public static List<List<Integer>> resList = new ArrayList<List<Integer>>();
 
     public static List<List<Integer>> levelOrder(TreeNode root) {
@@ -23,7 +22,6 @@ public class leetcode_102 {
 
     public static void level(TreeNode node, Integer deep) {
         if (node == null) return;
-
         deep++;
         if (resList.size() < deep) {
             //当层级增加时，list的Item也增加，利用list的索引值进行层级界定
@@ -31,7 +29,6 @@ public class leetcode_102 {
             resList.add(item);
         }
         resList.get(deep - 1).add(node.val);
-
         level(node.left, deep);
         level(node.right, deep);
     }
@@ -40,10 +37,9 @@ public class leetcode_102 {
         leetcode_102 tree = new leetcode_102();
         int input[]= {1,2,3,4,5,6,7};
         for(int i=0; i<input.length; i++) {
-            tree.insert(input[i]);
+            tree.insertAVL(input[i]);
         }
-        List<List<Integer>> lists = levelOrder(tree.root);
-        System.out.println(lists);
+        System.out.println(levelOrder(tree.root));
     }
 
     //插入二叉平衡树结点
@@ -79,6 +75,21 @@ public class leetcode_102 {
 
     //插入二叉树
     public void insert(int data) {
+        this.root = root;
+        deque = new LinkedList();
+        Queue<TreeNode> queue = new LinkedList();
+        queue.offer(root);
+
+        // BFS to populate deque
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            if (node.left == null || node.right == null)
+                deque.offerLast(node);
+            if (node.left != null)
+                queue.offer(node.left);
+            if (node.right != null)
+                queue.offer(node.right);
+        }
 
     }
 
