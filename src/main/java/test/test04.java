@@ -10,7 +10,7 @@ import java.util.Scanner;
  */
 public class test04 {
     public static void main(String[] args) {
-        String change = Change("1234");
+        String change = Change("125235");
         System.out.println(change);
     }
 
