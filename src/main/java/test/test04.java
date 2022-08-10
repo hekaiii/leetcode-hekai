@@ -1,9 +1,6 @@
 package test;
 
-import javafx.scene.control.TextFormatter;
-
 import java.util.Arrays;
-import java.util.Scanner;
 
 /**
  * @Date: 2022/4/24 22:57
