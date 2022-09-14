@@ -1,7 +1,10 @@
 package Array;
 
 import jdk.internal.util.xml.impl.ReaderUTF8;
+import jdk.nashorn.internal.ir.ReturnNode;
 
+import javax.swing.text.TabExpander;
+import java.awt.font.TextAttribute;
 import java.security.Key;
 import java.security.SecureRandom;
 
@@ -13,9 +16,9 @@ import java.security.SecureRandom;
  */
 public class leetcode_704 {
     public static void main(String[] args) {
-        int[] a =new int[]{1,2,3,4,5};
-        int search = search(a,1);
-        System.out.println(search);
+        int[] a = {-1, 0, 3, 5, 9, 12};
+        int b = search2(a, 2);
+        System.out.println(b);
     }
     public static int search(int[] nums, int target) {
         int left = 0;
@@ -33,8 +36,37 @@ public class leetcode_704 {
         return -1;
     }
 
-    public int search2(int[] nums, int target) {
+    //左闭右闭
+    public static int search1(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        while (right >= left) {
+            int mid = left + (right - left) / 2;
+            if (target > nums[mid]) {
+                left = mid + 1;
+            } else if (target < nums[mid]) {
+                right = mid - 1;
+            } else if (nums[mid] == target){
+                return mid;
+            }
+        }
+        return -1;
+    }
 
-        return 0;
+    //左闭右开
+    public static int search2(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (target > nums[mid]) {
+                left = mid + 1;
+            } else if (target < nums[mid]) {
+                right = mid - 1;
+            } else if (nums[mid] == target) {
+                return mid;
+            }
+        }
+        return -1;
     }
 }
