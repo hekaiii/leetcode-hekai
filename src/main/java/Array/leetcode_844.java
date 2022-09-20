@@ -1,7 +1,5 @@
 package Array;
 
-import com.sun.xml.internal.bind.v2.util.FatalAdapter;
-
 /**
  * Created with IntelliJ IDEA.
  *
@@ -16,7 +14,9 @@ public class leetcode_844 {
     public static boolean backspaceCompare(String s, String t) {
         String s_res = compareone(s);
         String t_res = compareone(t);
-        return s_res.equals(t_res);
+        String s1 = removeSharp(s);
+        String t1 = removeSharp(t);
+        return s1.equals(t1);
     }
 
     public static String compareone(String s) {
@@ -30,6 +30,26 @@ public class leetcode_844 {
                 sb.append(chars[i]);
             } else {
                 count--;
+            }
+        }
+        return sb.toString();
+    }
+
+    public static boolean backspaceCompare1(String s, String t) {
+        return false;
+    }
+
+    public static String removeSharp(String s) {
+        char[] a = s.toCharArray();
+        int count = 0;
+        StringBuilder sb = new StringBuilder();
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (a[i] == '#') {
+                count++;
+            } else if (count != 0) {
+                count--;
+            } else if (count == 0) {
+                sb.append(a[i]);
             }
         }
         return sb.toString();

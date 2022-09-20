@@ -1,7 +1,6 @@
 package Array;
 
 import java.util.Arrays;
-import java.util.concurrent.RecursiveTask;
 
 /**
  * Created with IntelliJ IDEA.
