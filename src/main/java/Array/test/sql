@@ -1,0 +1,2019 @@
+CREATE TABLE default.TB_M_YW_ZB_LABLE_202205
+(
+
+    DEVICE_NUMBER Nullable(String),
+
+    K000001 Nullable(String),
+
+    K000002 Nullable(Float64),
+
+    K000046 Nullable(String),
+
+    K000006 Nullable(String),
+
+    K000004 Nullable(Float64),
+
+    K000053 Nullable(Int64),
+
+    K000055 Nullable(String),
+
+    K000056 Nullable(String),
+
+    K000057 Nullable(String),
+
+    K000058 Nullable(String),
+
+    K000059 Nullable(String),
+
+    K000065 Nullable(String),
+
+    K000064 Nullable(String),
+
+    K000066 Nullable(String),
+
+    K000067 Nullable(String),
+
+    K000060 Nullable(String),
+
+    K000061 Nullable(Float64),
+
+    K000062 Nullable(Int64),
+
+    K000068 Nullable(String),
+
+    K000069 Nullable(Int64),
+
+    K000072 Nullable(String),
+
+    K003685 Nullable(String),
+
+    K003686 Nullable(String),
+
+    K003711 Nullable(String),
+
+    K003712 Nullable(String),
+
+    K003667 Nullable(String),
+
+    K000073 Nullable(String),
+
+    K000074 Nullable(String),
+
+    K000076 Nullable(Float64),
+
+    K000077 Nullable(Float64),
+
+    K000078 Nullable(Float64),
+
+    K000079 Nullable(Float64),
+
+    K000080 Nullable(Float64),
+
+    K000082 Nullable(Float64),
+
+    K000083 Nullable(Int64),
+
+    K000084 Nullable(Float64),
+
+    K000085 Nullable(Int64),
+
+    K003729 Nullable(Float64),
+
+    K003730 Nullable(Float64),
+
+    K000087 Nullable(Float64),
+
+    K000088 Nullable(Float64),
+
+    K000089 Nullable(Float64),
+
+    K000090 Nullable(Float64),
+
+    K000091 Nullable(Float64),
+
+    K000097 Nullable(Float64),
+
+    K000098 Nullable(Float64),
+
+    K000099 Nullable(Float64),
+
+    K000100 Nullable(Float64),
+
+    K000101 Nullable(Float64),
+
+    K003727 Nullable(Float64),
+
+    K003728 Nullable(Float64),
+
+    K003677 Nullable(String),
+
+    K003678 Nullable(String),
+
+    K000111 Nullable(String),
+
+    K003611 Nullable(Float64),
+
+    K003612 Nullable(Float64),
+
+    K003613 Nullable(Float64),
+
+    K003614 Nullable(Float64),
+
+    K003725 Nullable(Float64),
+
+    K003726 Nullable(Float64),
+
+    K003696 Nullable(String),
+
+    K003618 Nullable(Float64),
+
+    K003619 Nullable(Float64),
+
+    K003621 Nullable(String),
+
+    K003622 Nullable(String),
+
+    K003626 Nullable(Int64),
+
+    K003627 Nullable(Float64),
+
+    K003628 Nullable(String),
+
+    K003629 Nullable(String),
+
+    K003679 Nullable(String),
+
+    K003680 Nullable(Float64),
+
+    K000008 Nullable(String),
+
+    K003632 Nullable(String),
+
+    K003633 Nullable(String),
+
+    K003634 Nullable(String),
+
+    K003635 Nullable(String),
+
+    K003636 Nullable(String),
+
+    K003637 Nullable(Float64),
+
+    K003638 Nullable(String),
+
+    K003640 Nullable(Float64),
+
+    K003639 Nullable(String),
+
+    K003641 Nullable(String),
+
+    K003642 Nullable(String),
+
+    K003643 Nullable(String),
+
+    K003644 Nullable(String),
+
+    K003645 Nullable(String),
+
+    K003646 Nullable(String),
+
+    K003648 Nullable(String),
+
+    K003649 Nullable(String),
+
+    K003620 Nullable(String),
+
+    K003625 Nullable(String),
+
+    K003654 Nullable(String),
+
+    K003668 Nullable(String),
+
+    K003655 Nullable(String),
+
+    K003669 Nullable(String),
+
+    K003664 Nullable(String),
+
+    K003661 Nullable(String),
+
+    K003662 Nullable(String),
+
+    K003663 Nullable(String),
+
+    K003731 Nullable(Float64),
+
+    K000041 Nullable(String),
+
+    K003666 Nullable(String),
+
+    K003681 Nullable(String),
+
+    K000145 Nullable(String),
+
+    K000144 Nullable(String),
+
+    K003665 Nullable(String),
+
+    K003659 Nullable(String),
+
+    K003660 Nullable(String),
+
+    K003656 Nullable(String),
+
+    K003734 Nullable(String),
+
+    K003735 Nullable(String),
+
+    K003736 Nullable(String),
+
+    K000039 Nullable(String),
+
+    K003740 Nullable(String),
+
+    K003741 Nullable(String),
+
+    K003742 Nullable(String),
+
+    K003743 Nullable(String),
+
+    K003744 Nullable(String),
+
+    K003745 Nullable(String),
+
+    K003746 Nullable(String),
+
+    K003747 Nullable(Int64),
+
+    K003748 Nullable(Int64),
+
+    K003749 Nullable(Int64),
+
+    K003750 Nullable(Float64),
+
+    K003751 Nullable(Float64),
+
+    K003752 Nullable(Float64),
+
+    K003753 Nullable(Int64),
+
+    K003754 Nullable(Float64),
+
+    K003755 Nullable(String),
+
+    K003756 Nullable(String),
+
+    K003757 Nullable(Int64),
+
+    K003758 Nullable(Int64),
+
+    K003759 Nullable(Int64),
+
+    K003760 Nullable(String),
+
+    K003761 Nullable(Float64),
+
+    K003762 Nullable(String),
+
+    K003763 Nullable(Int64),
+
+    K003764 Nullable(String),
+
+    K003765 Nullable(Int64),
+
+    K003766 Nullable(String),
+
+    K003767 Nullable(String),
+
+    K003768 Nullable(String),
+
+    K003769 Nullable(String),
+
+    K003770 Nullable(String),
+
+    K003771 Nullable(String),
+
+    K003772 Nullable(String),
+
+    K003773 Nullable(String),
+
+    K003774 Nullable(Float64),
+
+    K003775 Nullable(String),
+
+    K003776 Nullable(String),
+
+    K003777 Nullable(String),
+
+    K003778 Nullable(String),
+
+    K003779 Nullable(Float64),
+
+    K003780 Nullable(String),
+
+    K003781 Nullable(String),
+
+    K003782 Nullable(String),
+
+    K003783 Nullable(String),
+
+    K003784 Nullable(String),
+
+    K003785 Nullable(String),
+
+    K003786 Nullable(String),
+
+    K003787 Nullable(Float64),
+
+    K003788 Nullable(String),
+
+    K003789 Nullable(String),
+
+    K003790 Nullable(String),
+
+    K003791 Nullable(String),
+
+    K003792 Nullable(String),
+
+    K003793 Nullable(String),
+
+    K003794 Nullable(String),
+
+    K003795 Nullable(String),
+
+    K003796 Nullable(String),
+
+    K003797 Nullable(String),
+
+    K003798 Nullable(String),
+
+    K003799 Nullable(String),
+
+    K003800 Nullable(String),
+
+    K003801 Nullable(String),
+
+    K003802 Nullable(String),
+
+    K003803 Nullable(String),
+
+    K003804 Nullable(String),
+
+    K003805 Nullable(String),
+
+    K003806 Nullable(String),
+
+    K003807 Nullable(String),
+
+    K003808 Nullable(String),
+
+    K003809 Nullable(String),
+
+    K003810 Nullable(String),
+
+    K003811 Nullable(String),
+
+    K003812 Nullable(String),
+
+    K003813 Nullable(String),
+
+    K003814 Nullable(String),
+
+    K003815 Nullable(String),
+
+    K003816 Nullable(String),
+
+    K003817 Nullable(String),
+
+    K003818 Nullable(String),
+
+    K003856 Nullable(Float64),
+
+    K003857 Nullable(Float64),
+
+    K003858 Nullable(Float64),
+
+    K003859 Nullable(Float64),
+
+    K003860 Nullable(String),
+
+    K003861 Nullable(String),
+
+    K003862 Nullable(String),
+
+    K003863 Nullable(String),
+
+    K003864 Nullable(Float64),
+
+    K003819 Nullable(Float64),
+
+    K003820 Nullable(Float64),
+
+    K003821 Nullable(Float64),
+
+    K003822 Nullable(Float64),
+
+    K003823 Nullable(Float64),
+
+    K003824 Nullable(Float64),
+
+    K003825 Nullable(Float64),
+
+    K003826 Nullable(Float64),
+
+    K003827 Nullable(Float64),
+
+    K003828 Nullable(Float64),
+
+    K003829 Nullable(Float64),
+
+    K003830 Nullable(Float64),
+
+    K003831 Nullable(Float64),
+
+    K003832 Nullable(Float64),
+
+    K003833 Nullable(Float64),
+
+    K003834 Nullable(Float64),
+
+    K003835 Nullable(Float64),
+
+    K003836 Nullable(Float64),
+
+    K003837 Nullable(Float64),
+
+    K003838 Nullable(Float64),
+
+    K003839 Nullable(Float64),
+
+    K003840 Nullable(Float64),
+
+    K003841 Nullable(Float64),
+
+    K003842 Nullable(Float64),
+
+    K003843 Nullable(Float64),
+
+    K003844 Nullable(Float64),
+
+    K003845 Nullable(Float64),
+
+    K003846 Nullable(Float64),
+
+    K003847 Nullable(Float64),
+
+    K003848 Nullable(Float64),
+
+    K003849 Nullable(Float64),
+
+    K003850 Nullable(Float64),
+
+    K003851 Nullable(Float64),
+
+    K003852 Nullable(Float64),
+
+    K003853 Nullable(Float64),
+
+    K003854 Nullable(Float64),
+
+    K003855 Nullable(Float64),
+
+    K003885 Nullable(String),
+
+    K003886 Nullable(Float64),
+
+    K003887 Nullable(String),
+
+    K003865 Nullable(String),
+
+    K003866 Nullable(String),
+
+    K003867 Nullable(String),
+
+    K003868 Nullable(String),
+
+    K003869 Nullable(String),
+
+    K003870 Nullable(String),
+
+    K003871 Nullable(String),
+
+    K003872 Nullable(String),
+
+    K003873 Nullable(String),
+
+    K003874 Nullable(String),
+
+    K003875 Nullable(String),
+
+    K003876 Nullable(String),
+
+    K003877 Nullable(String),
+
+    K003878 Nullable(String),
+
+    K003879 Nullable(String),
+
+    K003880 Nullable(String),
+
+    K003881 Nullable(String),
+
+    K003882 Nullable(String),
+
+    K003883 Nullable(String),
+
+    K003884 Nullable(String),
+
+    K003888 Nullable(Float64),
+
+    K003889 Nullable(String),
+
+    K003890 Nullable(Int64),
+
+    K003891 Nullable(String),
+
+    K003892 Nullable(String),
+
+    K003893 Nullable(String),
+
+    K003894 Nullable(String),
+
+    K003895 Nullable(String),
+
+    K003896 Nullable(String),
+
+    K003897 Nullable(String),
+
+    K003898 Nullable(String),
+
+    K003899 Nullable(String),
+
+    K003900 Nullable(String),
+
+    K003901 Nullable(String),
+
+    K003902 Nullable(Int64),
+
+    K003903 Nullable(Float64),
+
+    K003904 Nullable(String),
+
+    K003905 Nullable(Int64),
+
+    K003906 Nullable(Int64),
+
+    K003907 Nullable(Int64),
+
+    K003908 Nullable(String),
+
+    K003909 Nullable(Int64),
+
+    K003910 Nullable(Float64),
+
+    K003911 Nullable(String),
+
+    K003912 Nullable(String),
+
+    K003913 Nullable(String),
+
+    K003914 Nullable(String),
+
+    K003915 Nullable(String),
+
+    K003916 Nullable(String),
+
+    K003917 Nullable(String),
+
+    K003918 Nullable(String),
+
+    K003919 Nullable(String),
+
+    K003920 Nullable(Float64),
+
+    K003921 Nullable(Float64),
+
+    K003922 Nullable(Float64),
+
+    K003930 Nullable(Int64),
+
+    K002029 Nullable(String),
+
+    K002030 Nullable(String),
+
+    K002031 Nullable(String),
+
+    K002032 Nullable(String),
+
+    K002033 Nullable(String),
+
+    K002034 Nullable(String),
+
+    K002035 Nullable(String),
+
+    K002036 Nullable(String),
+
+    K002037 Nullable(String),
+
+    K002038 Nullable(Float64),
+
+    K002039 Nullable(Float64),
+
+    K002040 Nullable(String),
+
+    K002041 Nullable(String),
+
+    K002042 Nullable(String),
+
+    K002043 Nullable(String),
+
+    K002044 Nullable(String),
+
+    K002045 Nullable(String),
+
+    K002046 Nullable(String),
+
+    K002047 Nullable(Int64),
+
+    K002048 Nullable(Float64),
+
+    K002049 Nullable(String),
+
+    K002050 Nullable(String),
+
+    K002051 Nullable(Float64),
+
+    K002052 Nullable(String),
+
+    K002053 Nullable(Float64),
+
+    K002054 Nullable(Float64),
+
+    K002055 Nullable(Float64),
+
+    K002056 Nullable(String),
+
+    K002057 Nullable(String),
+
+    K002058 Nullable(String),
+
+    K002059 Nullable(String),
+
+    K002060 Nullable(String),
+
+    K002061 Nullable(String),
+
+    K002062 Nullable(Float64),
+
+    K002063 Nullable(String),
+
+    K002064 Nullable(Float64),
+
+    K002065 Nullable(Float64),
+
+    K002066 Nullable(Float64),
+
+    K002067 Nullable(String),
+
+    K002068 Nullable(Float64),
+
+    K002069 Nullable(Float64),
+
+    K002070 Nullable(Float64),
+
+    K002071 Nullable(String),
+
+    K002072 Nullable(Float64),
+
+    K002073 Nullable(Float64),
+
+    K002074 Nullable(Float64),
+
+    K002075 Nullable(String),
+
+    K002076 Nullable(Float64),
+
+    K002077 Nullable(Float64),
+
+    K002078 Nullable(Float64),
+
+    K002079 Nullable(String),
+
+    K002080 Nullable(Float64),
+
+    K002081 Nullable(Float64),
+
+    K002082 Nullable(Float64),
+
+    K002083 Nullable(String),
+
+    K002084 Nullable(String),
+
+    K002085 Nullable(Float64),
+
+    K002086 Nullable(String),
+
+    K002087 Nullable(Float64),
+
+    K002088 Nullable(Float64),
+
+    K002089 Nullable(Float64),
+
+    K002090 Nullable(String),
+
+    K002091 Nullable(Float64),
+
+    K002092 Nullable(Float64),
+
+    K002093 Nullable(Float64),
+
+    K002094 Nullable(String),
+
+    K002095 Nullable(Float64),
+
+    K002096 Nullable(Float64),
+
+    K002097 Nullable(Float64),
+
+    K002098 Nullable(String),
+
+    K002099 Nullable(Float64),
+
+    K002100 Nullable(Float64),
+
+    K002101 Nullable(Float64),
+
+    K002102 Nullable(String),
+
+    K002103 Nullable(Float64),
+
+    K002104 Nullable(Float64),
+
+    K002105 Nullable(Float64),
+
+    K002106 Nullable(String),
+
+    K002107 Nullable(String),
+
+    K002108 Nullable(Float64),
+
+    K002109 Nullable(String),
+
+    K002110 Nullable(Float64),
+
+    K002111 Nullable(Float64),
+
+    K002112 Nullable(Float64),
+
+    K002113 Nullable(String),
+
+    K002114 Nullable(Float64),
+
+    K002115 Nullable(Float64),
+
+    K002116 Nullable(Float64),
+
+    K002117 Nullable(String),
+
+    K002118 Nullable(Float64),
+
+    K002119 Nullable(Float64),
+
+    K002120 Nullable(Float64),
+
+    K002121 Nullable(String),
+
+    K002122 Nullable(Float64),
+
+    K002123 Nullable(Float64),
+
+    K002124 Nullable(Float64),
+
+    K002125 Nullable(String),
+
+    K002126 Nullable(Float64),
+
+    K002127 Nullable(Float64),
+
+    K002128 Nullable(Float64),
+
+    K003670 Nullable(String),
+
+    K002139 Nullable(String),
+
+    K002140 Nullable(String),
+
+    K002160 Nullable(String),
+
+    K002175 Nullable(String),
+
+    K002176 Nullable(String),
+
+    K002177 Nullable(Float64),
+
+    K002178 Nullable(String),
+
+    K002179 Nullable(String),
+
+    K002180 Nullable(Int64),
+
+    K002185 Nullable(String),
+
+    K002186 Nullable(Float64),
+
+    K002190 Nullable(Float64),
+
+    K002204 Nullable(String),
+
+    K002205 Nullable(String),
+
+    K002187 Nullable(String),
+
+    K002188 Nullable(String),
+
+    K002189 Nullable(String),
+
+    K002191 Nullable(String),
+
+    K002192 Nullable(String),
+
+    K002193 Nullable(String),
+
+    K002194 Nullable(String),
+
+    K002195 Nullable(String),
+
+    K002196 Nullable(String),
+
+    K002197 Nullable(String),
+
+    K002198 Nullable(String),
+
+    K002199 Nullable(String),
+
+    K002200 Nullable(String),
+
+    K002201 Nullable(String),
+
+    K002202 Nullable(Int64),
+
+    K002203 Nullable(Int64),
+
+    X003672 Nullable(Int64),
+
+    X003673 Nullable(String),
+
+    X003674 Nullable(String),
+
+    X004004 Nullable(String),
+
+    X004001 Nullable(String),
+
+    X004002 Nullable(String),
+
+    X003675 Nullable(Float64),
+
+    X003676 Nullable(String),
+
+    X004003 Nullable(String),
+
+    T000002 Nullable(String),
+
+    T000003 Nullable(String),
+
+    T000004 Nullable(String),
+
+    T000005 Nullable(String),
+
+    T000006 Nullable(String),
+
+    T000007 Nullable(String),
+
+    K002174 Nullable(String),
+
+    K002217 Nullable(String),
+
+    K002218 Nullable(String),
+
+    K002219 Nullable(Float64),
+
+    K002220 Nullable(String),
+
+    K002221 Nullable(Float64),
+
+    K002222 Nullable(String),
+
+    K002230 Nullable(String),
+
+    K002231 Nullable(String),
+
+    K002232 Nullable(String),
+
+    K002233 Nullable(String),
+
+    K002234 Nullable(Float64),
+
+    K002235 Nullable(String),
+
+    K002236 Nullable(String),
+
+    K002247 Nullable(Float64),
+
+    K002248 Nullable(String),
+
+    K002249 Nullable(String),
+
+    K002254 Nullable(String),
+
+    K002255 Nullable(String),
+
+    K002261 Nullable(Float64),
+
+    K002262 Nullable(String),
+
+    K002263 Nullable(Float64),
+
+    K002278 Nullable(String),
+
+    K002279 Nullable(String),
+
+    K002280 Nullable(String),
+
+    K002285 Nullable(String),
+
+    K002286 Nullable(String),
+
+    K002287 Nullable(String),
+
+    K002288 Nullable(Float64),
+
+    K002289 Nullable(Float64),
+
+    K002290 Nullable(Float64),
+
+    K002291 Nullable(String),
+
+    K002292 Nullable(String),
+
+    K002293 Nullable(String),
+
+    K002294 Nullable(String),
+
+    K002330 Nullable(String),
+
+    K002405 Nullable(String),
+
+    K002406 Nullable(String),
+
+    K002407 Nullable(String),
+
+    K002295 Nullable(Float64),
+
+    K002296 Nullable(Int64),
+
+    K002297 Nullable(Float64),
+
+    K002298 Nullable(Float64),
+
+    K002299 Nullable(String),
+
+    K002300 Nullable(String),
+
+    K002301 Nullable(Float64),
+
+    K002302 Nullable(String),
+
+    K002303 Nullable(Float64),
+
+    K002304 Nullable(String),
+
+    K002305 Nullable(Float64),
+
+    K002306 Nullable(String),
+
+    K002307 Nullable(Float64),
+
+    K002308 Nullable(String),
+
+    K002309 Nullable(Float64),
+
+    K002310 Nullable(String),
+
+    K002311 Nullable(Float64),
+
+    K002312 Nullable(Float64),
+
+    K002313 Nullable(Float64),
+
+    K002314 Nullable(String),
+
+    K002315 Nullable(String),
+
+    K002316 Nullable(String),
+
+    K002317 Nullable(String),
+
+    K002318 Nullable(String),
+
+    K002319 Nullable(String),
+
+    K002320 Nullable(String),
+
+    K002321 Nullable(String),
+
+    K002322 Nullable(String),
+
+    K002323 Nullable(Float64),
+
+    K002324 Nullable(Float64),
+
+    K002325 Nullable(String),
+
+    K002326 Nullable(String),
+
+    K002327 Nullable(String),
+
+    K002328 Nullable(Int64),
+
+    K002329 Nullable(Int64),
+
+    K002333 Nullable(Int64),
+
+    K002346 Nullable(String),
+
+    K002347 Nullable(String),
+
+    K002348 Nullable(String),
+
+    K002349 Nullable(String),
+
+    K002350 Nullable(String),
+
+    K002351 Nullable(String),
+
+    K002352 Nullable(String),
+
+    K002353 Nullable(String),
+
+    K002354 Nullable(String),
+
+    K002355 Nullable(String),
+
+    K002356 Nullable(String),
+
+    K002357 Nullable(String),
+
+    K002358 Nullable(String),
+
+    K002359 Nullable(String),
+
+    K002360 Nullable(String),
+
+    K002361 Nullable(String),
+
+    K002362 Nullable(String),
+
+    K002363 Nullable(String),
+
+    K002364 Nullable(String),
+
+    K002365 Nullable(String),
+
+    K002366 Nullable(String),
+
+    K002367 Nullable(Float64),
+
+    K002368 Nullable(Float64),
+
+    K002369 Nullable(String),
+
+    K002370 Nullable(String),
+
+    K002371 Nullable(String),
+
+    K002372 Nullable(String),
+
+    K002373 Nullable(String),
+
+    K002374 Nullable(Float64),
+
+    K002375 Nullable(Float64),
+
+    K002376 Nullable(Float64),
+
+    K002377 Nullable(Float64),
+
+    K002378 Nullable(Float64),
+
+    K002379 Nullable(Float64),
+
+    K002380 Nullable(Float64),
+
+    K002381 Nullable(Float64),
+
+    K002382 Nullable(Float64),
+
+    K002383 Nullable(Float64),
+
+    K002384 Nullable(Float64),
+
+    K002385 Nullable(Float64),
+
+    K002386 Nullable(Float64),
+
+    K002388 Nullable(String),
+
+    K002389 Nullable(String),
+
+    K002390 Nullable(String),
+
+    K002391 Nullable(String),
+
+    K002392 Nullable(String),
+
+    K002393 Nullable(String),
+
+    K002394 Nullable(Int64),
+
+    K002395 Nullable(String),
+
+    K002396 Nullable(String),
+
+    K002397 Nullable(String),
+
+    K002398 Nullable(String),
+
+    K002399 Nullable(Float64),
+
+    X005001 Nullable(String),
+
+    K002410 Nullable(String),
+
+    K002411 Nullable(String),
+
+    K002412 Nullable(String),
+
+    K002413 Nullable(String),
+
+    K002414 Nullable(Float64),
+
+    K002415 Nullable(String),
+
+    K002416 Nullable(String),
+
+    K002417 Nullable(Float64),
+
+    K002418 Nullable(Float64),
+
+    K002419 Nullable(String),
+
+    K002420 Nullable(String),
+
+    K002443 Nullable(String),
+
+    K002439 Nullable(Int64),
+
+    K002440 Nullable(Float64),
+
+    K002441 Nullable(Float64),
+
+    K002442 Nullable(Float64),
+
+    K002515 Nullable(String),
+
+    K002554 Nullable(String),
+
+    K002470 Nullable(String),
+
+    K002421 Nullable(String),
+
+    K002475 Nullable(String),
+
+    K002476 Nullable(String),
+
+    K002477 Nullable(String),
+
+    K002478 Nullable(String),
+
+    K002422 Nullable(String),
+
+    K002471 Nullable(String),
+
+    K002472 Nullable(String),
+
+    K002480 Nullable(String),
+
+    K002505 Nullable(String),
+
+    K002506 Nullable(Float64),
+
+    K002507 Nullable(String),
+
+    K002508 Nullable(Float64),
+
+    K002513 Nullable(String),
+
+    K002514 Nullable(String),
+
+    K002528 Nullable(String),
+
+    K002526 Nullable(String),
+
+    K002512 Nullable(String),
+
+    K002511 Nullable(String),
+
+    K002337 Nullable(Int64),
+
+    K002338 Nullable(String),
+
+    K002339 Nullable(Int64),
+
+    K002340 Nullable(String),
+
+    K002341 Nullable(String),
+
+    K002342 Nullable(String),
+
+    K002343 Nullable(String),
+
+    K002344 Nullable(String),
+
+    K002345 Nullable(String),
+
+    K002482 Nullable(String),
+
+    K002436 Nullable(String),
+
+    K002446 Nullable(String),
+
+    K002423 Nullable(Int64),
+
+    K002424 Nullable(Float64),
+
+    K002425 Nullable(Float64),
+
+    K002426 Nullable(Float64),
+
+    K002427 Nullable(Int64),
+
+    K002428 Nullable(Int64),
+
+    K002429 Nullable(Float64),
+
+    K002430 Nullable(Float64),
+
+    K002431 Nullable(Int64),
+
+    K002432 Nullable(Int64),
+
+    K002433 Nullable(Int64),
+
+    K002434 Nullable(Int64),
+
+    K002435 Nullable(Float64),
+
+    K002449 Nullable(Int64),
+
+    K002450 Nullable(Float64),
+
+    K002460 Nullable(Int64),
+
+    K002461 Nullable(Float64),
+
+    K002462 Nullable(Int64),
+
+    K002504 Nullable(String),
+
+    K002469 Nullable(String),
+
+    K002588 Nullable(String),
+
+    K002589 Nullable(String),
+
+    K002590 Nullable(String),
+
+    K002591 Nullable(String),
+
+    K002592 Nullable(String),
+
+    K002593 Nullable(String),
+
+    K002594 Nullable(String),
+
+    K002595 Nullable(String),
+
+    K002596 Nullable(String),
+
+    K002597 Nullable(String),
+
+    K002598 Nullable(String),
+
+    K002599 Nullable(String),
+
+    K002509 Nullable(String),
+
+    K002510 Nullable(String),
+
+    K002555 Nullable(Int64),
+
+    K002556 Nullable(Int64),
+
+    K002629 Nullable(String),
+
+    K002628 Nullable(String),
+
+    K002627 Nullable(String),
+
+    K002654 Nullable(String),
+
+    K002655 Nullable(Int64),
+
+    K002656 Nullable(String),
+
+    K002657 Nullable(String),
+
+    K002693 Nullable(String),
+
+    K002739 Nullable(Float64),
+
+    K002740 Nullable(Int64),
+
+    K002741 Nullable(Float64),
+
+    K002742 Nullable(String),
+
+    K002716 Nullable(Int64),
+
+    K002717 Nullable(Int64),
+
+    K002718 Nullable(Int64),
+
+    K002719 Nullable(Int64),
+
+    K002720 Nullable(Int64),
+
+    K002721 Nullable(Int64),
+
+    K002722 Nullable(Int64),
+
+    K002723 Nullable(Int64),
+
+    K002724 Nullable(Int64),
+
+    K002725 Nullable(Int64),
+
+    K002726 Nullable(Int64),
+
+    K002727 Nullable(Int64),
+
+    K002728 Nullable(Int64),
+
+    K002729 Nullable(Int64),
+
+    K002730 Nullable(Int64),
+
+    K002731 Nullable(Int64),
+
+    K002734 Nullable(String),
+
+    K002735 Nullable(String),
+
+    K002736 Nullable(String),
+
+    K002737 Nullable(String),
+
+    K002738 Nullable(String),
+
+    K002732 Nullable(Int64),
+
+    K002733 Nullable(Int64),
+
+    K002660 Nullable(Float64),
+
+    K002661 Nullable(Float64),
+
+    K002701 Nullable(String),
+
+    K002702 Nullable(Int64),
+
+    K002703 Nullable(Float64),
+
+    K002704 Nullable(String),
+
+    K002705 Nullable(String),
+
+    K002706 Nullable(String),
+
+    K002682 Nullable(Float64),
+
+    K002689 Nullable(String),
+
+    K002690 Nullable(String),
+
+    K002683 Nullable(String),
+
+    K002684 Nullable(String),
+
+    K002685 Nullable(String),
+
+    K002686 Nullable(String),
+
+    K002687 Nullable(Int64),
+
+    K002688 Nullable(Int64),
+
+    K002666 Nullable(String),
+
+    K002667 Nullable(String),
+
+    K002680 Nullable(String),
+
+    K002672 Nullable(String),
+
+    K002677 Nullable(String),
+
+    K002678 Nullable(String),
+
+    K002707 Nullable(String),
+
+    K002708 Nullable(Float64),
+
+    K002745 Nullable(String),
+
+    K002746 Nullable(String),
+
+    K002747 Nullable(String),
+
+    K002748 Nullable(String),
+
+    K002679 Nullable(Float64),
+
+    K002665 Nullable(Int64),
+
+    K002673 Nullable(String),
+
+    K002674 Nullable(String),
+
+    K002675 Nullable(String),
+
+    K002676 Nullable(String),
+
+    K000070 Nullable(String),
+
+    K002715 Nullable(String),
+
+    K002714 Nullable(String),
+
+    K002743 Nullable(Int64),
+
+    K002516 Nullable(Float64),
+
+    K002517 Nullable(Float64),
+
+    K002518 Nullable(Float64),
+
+    K002519 Nullable(Float64),
+
+    K002520 Nullable(Float64),
+
+    K002521 Nullable(Float64),
+
+    K002523 Nullable(Float64),
+
+    K002524 Nullable(Float64),
+
+    K002525 Nullable(Float64),
+
+    K002527 Nullable(Float64),
+
+    K002529 Nullable(Float64),
+
+    K002530 Nullable(Float64),
+
+    K002531 Nullable(Float64),
+
+    K002532 Nullable(Float64),
+
+    K002533 Nullable(Float64),
+
+    K002534 Nullable(Float64),
+
+    K002535 Nullable(Float64),
+
+    K002536 Nullable(Float64),
+
+    K002537 Nullable(Float64),
+
+    K002538 Nullable(Float64),
+
+    K002539 Nullable(Float64),
+
+    K002540 Nullable(Float64),
+
+    K002541 Nullable(Float64),
+
+    K002542 Nullable(Float64),
+
+    K002543 Nullable(Float64),
+
+    K002544 Nullable(Float64),
+
+    K002545 Nullable(Float64),
+
+    K002546 Nullable(Float64),
+
+    K002547 Nullable(Float64),
+
+    K002548 Nullable(Float64),
+
+    K002549 Nullable(Float64),
+
+    K002550 Nullable(Float64),
+
+    K002551 Nullable(Float64),
+
+    K002552 Nullable(Float64),
+
+    K002553 Nullable(Float64),
+
+    K002609 Nullable(String),
+
+    K002610 Nullable(Int64),
+
+    K002611 Nullable(Int64),
+
+    K002756 Nullable(String),
+
+    K002751 Nullable(Float64),
+
+    K002752 Nullable(Float64),
+
+    K002753 Nullable(String),
+
+    K002744 Nullable(Float64),
+
+    K002794 Nullable(String),
+
+    K002795 Nullable(String),
+
+    K002712 Nullable(String),
+
+    K002771 Nullable(String),
+
+    K002773 Nullable(String),
+
+    K002772 Nullable(Float64),
+
+    K002781 Nullable(String),
+
+    K002790 Nullable(String),
+
+    K002791 Nullable(String),
+
+    K002792 Nullable(String),
+
+    K002793 Nullable(Int64),
+
+    K002779 Nullable(Int64),
+
+    K002780 Nullable(Int64),
+
+    K002774 Nullable(Float64),
+
+    K002775 Nullable(Float64),
+
+    K002776 Nullable(Float64),
+
+    K002785 Nullable(String),
+
+    K002786 Nullable(String),
+
+    K002787 Nullable(String),
+
+    K002788 Nullable(String),
+
+    K002789 Nullable(String),
+
+    K002801 Nullable(Int64),
+
+    K002862 Nullable(String),
+
+    K002866 Nullable(String),
+
+    K002868 Nullable(String),
+
+    K002879 Nullable(String),
+
+    K002878 Nullable(Int64),
+
+    K002873 Nullable(String),
+
+    K002885 Nullable(String),
+
+    K002867 Nullable(String),
+
+    N240001 Nullable(String),
+
+    N240002 Nullable(Float64),
+
+    K002875 Nullable(Float64),
+
+    K002876 Nullable(String),
+
+    K002877 Nullable(Int64),
+
+    K002919 Nullable(Int64),
+
+    K002920 Nullable(Float64),
+
+    K002921 Nullable(Float64),
+
+    K002922 Nullable(Int64),
+
+    K002874 Nullable(Float64),
+
+    N230005 Nullable(Int64),
+
+    K002886 Nullable(Float64),
+
+    K002887 Nullable(Float64),
+
+    K002888 Nullable(Float64),
+
+    K002889 Nullable(Float64),
+
+    K002890 Nullable(String),
+
+    K002880 Nullable(String),
+
+    K002881 Nullable(String),
+
+    K002882 Nullable(String),
+
+    K002883 Nullable(String),
+
+    K002884 Nullable(Float64),
+
+    K002917 Nullable(Float64),
+
+    K002918 Nullable(String),
+
+    K002804 Nullable(String),
+
+    K002845 Nullable(String),
+
+    K002853 Nullable(Float64),
+
+    K002854 Nullable(Float64),
+
+    K002855 Nullable(Float64),
+
+    K002856 Nullable(Float64),
+
+    K002857 Nullable(Float64),
+
+    K002846 Nullable(Int64),
+
+    K002847 Nullable(Int64),
+
+    K002848 Nullable(Float64),
+
+    K002849 Nullable(Float64),
+
+    K002850 Nullable(Float64),
+
+    K002851 Nullable(Float64),
+
+    K002852 Nullable(Float64),
+
+    K002806 Nullable(Float64),
+
+    K002807 Nullable(Float64),
+
+    K002808 Nullable(Float64),
+
+    K002809 Nullable(Float64),
+
+    K002810 Nullable(Float64),
+
+    K002811 Nullable(Float64),
+
+    K002812 Nullable(Float64),
+
+    K002813 Nullable(Float64),
+
+    K002814 Nullable(Float64),
+
+    K002815 Nullable(Float64),
+
+    K002816 Nullable(Float64),
+
+    K002817 Nullable(Float64),
+
+    K002818 Nullable(Float64),
+
+    K002819 Nullable(Float64),
+
+    K002820 Nullable(Float64),
+
+    K002821 Nullable(Float64),
+
+    K002822 Nullable(Float64),
+
+    K002823 Nullable(Float64),
+
+    K002824 Nullable(Float64),
+
+    K002825 Nullable(Float64),
+
+    K002826 Nullable(Float64),
+
+    K002827 Nullable(Float64),
+
+    K002828 Nullable(Float64),
+
+    K002829 Nullable(Float64),
+
+    K002830 Nullable(Float64),
+
+    K002831 Nullable(Float64),
+
+    K002832 Nullable(Float64),
+
+    K002833 Nullable(Float64),
+
+    K002834 Nullable(Float64),
+
+    K002835 Nullable(Float64),
+
+    K002836 Nullable(Float64),
+
+    K002837 Nullable(Float64),
+
+    K002838 Nullable(Float64),
+
+    K002839 Nullable(Float64),
+
+    K002840 Nullable(Float64),
+
+    K002841 Nullable(Float64),
+
+    K002842 Nullable(Float64),
+
+    K002843 Nullable(Float64),
+
+    K002799 Nullable(String),
+
+    K002927 Nullable(String),
+
+    K002926 Nullable(String),
+
+    K002928 Nullable(String),
+
+    K002929 Nullable(String),
+
+    K002930 Nullable(String),
+
+    K002901 Nullable(String),
+
+    K002945 Nullable(String),
+
+    K002941 Nullable(String),
+
+    K002942 Nullable(Float64),
+
+    K002943 Nullable(Float64),
+
+    K002946 Nullable(Float64),
+
+    K002949 Nullable(Float64),
+
+    K002947 Nullable(Float64),
+
+    K002937 Nullable(Float64),
+
+    K002938 Nullable(Float64),
+
+    K002897 Nullable(String),
+
+    K002950 Nullable(Int64),
+
+    K002944 Nullable(Float64),
+
+    PROV_ID Nullable(String),
+
+    DATE_ID Nullable(String),
+
+    K002948 Nullable(Float64),
+
+    K002989 Nullable(String),
+
+    K002990 Nullable(String),
+
+    K002991 Nullable(String),
+
+    K002992 Nullable(String),
+
+    K002993 Nullable(String),
+
+    K002994 Nullable(String),
+
+    K002995 Nullable(String),
+
+    K002902 Nullable(String),
+
+    K002903 Nullable(String),
+
+    K002904 Nullable(String),
+
+    K002905 Nullable(String),
+
+    K002906 Nullable(String),
+
+    K002909 Nullable(String),
+
+    K002976 Nullable(String),
+
+    K002977 Nullable(Int64),
+
+    K002951 Nullable(String),
+
+    K002952 Nullable(String),
+
+    K002908 Nullable(String),
+
+    K002907 Nullable(String),
+
+    K002891 Nullable(String),
+
+    K002892 Nullable(String),
+
+    K002893 Nullable(String),
+
+    K002894 Nullable(String),
+
+    K002895 Nullable(String),
+
+    K002896 Nullable(Float64),
+
+    K002898 Nullable(String),
+
+    K002978 Nullable(String),
+
+    K002979 Nullable(String),
+
+    K002985 Nullable(String),
+
+    K002986 Nullable(String),
+
+    K002987 Nullable(String),
+
+    K002988 Nullable(String),
+
+    K002980 Nullable(String),
+
+    K002981 Nullable(String),
+
+    K002982 Nullable(String),
+
+    K002983 Nullable(String),
+
+    K002984 Nullable(String),
+
+    K002671 Nullable(String),
+
+    K003013 Nullable(String),
+
+    K003014 Nullable(String),
+
+    K003015 Nullable(String),
+
+    K003017 Nullable(String),
+
+    K003028 Nullable(String),
+
+    K003006 Nullable(String),
+
+    K003022 Nullable(String),
+
+    K003023 Nullable(String),
+
+    K003024 Nullable(String),
+
+    K003009 Nullable(Float64),
+
+    K003010 Nullable(Int64),
+
+    K003011 Nullable(Int64),
+
+    K003008 Nullable(Float64),
+
+    K002998 Nullable(String),
+
+    K003005 Nullable(Float64),
+
+    K003018 Nullable(String),
+
+    K003019 Nullable(String),
+
+    K003020 Nullable(String),
+
+    K003021 Nullable(String),
+
+    K003030 Nullable(String),
+
+    K003016 Nullable(String),
+
+    K003012 Nullable(Float64),
+
+    K003003 Nullable(Int64),
+
+    K003037 Nullable(String),
+
+    K003035 Nullable(String),
+
+    K003036 Nullable(String),
+
+    K003034 Nullable(String),
+
+    K003033 Nullable(String),
+
+    K003039 Nullable(String),
+
+    K003040 Nullable(String),
+
+    K003043 Nullable(Float64),
+
+    K003044 Nullable(Float64),
+
+    K003049 Nullable(Float64),
+
+    K003051 Nullable(Int64),
+
+    K003055 Nullable(Int64),
+
+    K003052 Nullable(String),
+
+    K003074 Nullable(Float64),
+
+    K003075 Nullable(Float64),
+
+    K003076 Nullable(String),
+
+    K003077 Nullable(String),
+
+    K003078 Nullable(String),
+
+    K003064 Nullable(Float64),
+
+    K003065 Nullable(Float64),
+
+    K003066 Nullable(Float64),
+
+    K003070 Nullable(Float64),
+
+    K003069 Nullable(String),
+
+    K003071 Nullable(String),
+
+    K003080 Nullable(Float64),
+
+    K003081 Nullable(Float64),
+
+    K003082 Nullable(Float64),
+
+    K003083 Nullable(Float64),
+
+    K003084 Nullable(Float64),
+
+    K003085 Nullable(Float64),
+
+    K003086 Nullable(Float64),
+
+    K003087 Nullable(Float64),
+
+    K003088 Nullable(Float64),
+
+    K003089 Nullable(Float64),
+
+    K003090 Nullable(Float64),
+
+    K003091 Nullable(Float64),
+
+    K003092 Nullable(Float64),
+
+    K003093 Nullable(Float64),
+
+    K003094 Nullable(Float64),
+
+    K003095 Nullable(Float64),
+
+    K003096 Nullable(Float64),
+
+    K003097 Nullable(Float64),
+
+    K003100 Nullable(String),
+)
+ENGINE = ReplacingMergeTree
+ORDER BY DEVICE_NUMBER
