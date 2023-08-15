@@ -71,8 +71,36 @@ public class leetcode_35 {
         return 0;
     }
 
+    //二分法
+    public static int searchInsert3(int[] nums, int target){
+        int left = 0;
+        int right = nums.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] > target) {
+                right = mid - 1;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return left;
+    }
 
-
-
-
+    //指针
+    public static int searchInsert4(int[] nums, int target) {
+        int result = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target || nums[i] > target) {
+                return i;
+            } else if (nums[i] < target) {
+                result++;
+                continue;
+            } else if (nums[i] > target && i == nums.length - 1) {
+                return result;
+            }
+        }
+        return result;
+    }
 }
