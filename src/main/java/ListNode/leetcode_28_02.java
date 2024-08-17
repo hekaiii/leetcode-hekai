@@ -1,6 +1,5 @@
 package ListNode;
 
-import jdk.nashorn.internal.ir.WhileNode;
 
 /**
  * Created with IntelliJ IDEA.
