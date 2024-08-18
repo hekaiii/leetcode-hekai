@@ -103,4 +103,29 @@ public class leetcode_35 {
         }
         return result;
     }
+
+    public static int searchInsert5(int[] nums, int target) {
+        if (nums[0] > target) {
+            return 0;
+        } else if (nums[nums.length - 1] < target) {
+            return nums.length;
+        }
+        int left = 0;
+        int right = nums.length - 1;
+        while (right >= left) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] > target) {
+                right = mid - 1;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        if (nums[left] < target) {
+            return left + 1;
+        } else {
+            return left;
+        }
+    }
 }

@@ -1,11 +1,16 @@
 package Array;
 
+import java.util.Arrays;
+
 public class leetcode_34 {
     public static void main(String[] args) {
         int[] a = {5, 7, 7, 8, 8, 9, 10};
-        int getleft = getleft(a, 8);
-        System.out.println(getleft);
+        int[] b = {};
+        System.out.println(b.length);
+//        int getleft = getleft(a, 8);
+//        System.out.println(getleft);
 //        System.out.println(Arrays.toString(searchRange1(a, 5)));
+        System.out.println(Arrays.toString(searchRange11(b,8)));
     }
 
     public static int[] searchRange(int[] nums, int target) {
@@ -149,5 +154,25 @@ public class leetcode_34 {
             }
         }
         return -1;
+    }
+
+    public static int[] searchRange11(int[] nums, int target) {
+        if (nums.length == 0) {
+            return new int[]{-1, -1};
+        }
+        if (nums[nums.length - 1] < target || target < nums[0] ) {
+            return new int[]{-1, -1};
+        }
+        int start = -1;
+        int end = -1;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target && start == -1) {
+                start = i;
+                end = i;
+            } else if (nums[i] == target && start != -1) {
+                end = i;
+            }
+        }
+        return new int[]{start, end};
     }
 }

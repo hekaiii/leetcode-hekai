@@ -45,4 +45,10 @@ public class leetcode_69 {
         return left;
     }
 
+    //todo 20240819
+    public static int mySqrt02(int x) {
+        if (x == 0 || x == 1) {
+            return x;
+        }
+    }
 }

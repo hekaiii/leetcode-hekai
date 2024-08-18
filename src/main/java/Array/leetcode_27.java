@@ -83,4 +83,19 @@ public class leetcode_27 {
         }
         return nums.length - slow;
     }
+
+    public static int removeElement6(int[] nums, int val) {
+        int slow = 0;
+        int fast = 0;
+        int count = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[fast] == val) {
+                fast++;
+                count--;
+            } else {
+                nums[slow++] = nums[fast++];
+            }
+        }
+        return count;
+    }
 }
