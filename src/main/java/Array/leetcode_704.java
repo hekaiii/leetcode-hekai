@@ -179,6 +179,9 @@ public class leetcode_704 {
         return -1;
     }
 
+
+
+
     //左右闭
     public static int search10 (int[] nums, int target) {
         int left = 0;

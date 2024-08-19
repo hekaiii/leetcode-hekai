@@ -9,7 +9,7 @@ package Array;
 public class leetcode_283 {
     public static void main(String[] args) {
         int[] a = new int[]{0, 1, 0, 3, 12};
-        moveZeroes2(a);
+        moveZeroes3(a);
         System.out.println(a.toString());
     }
     public static void moveZeroes(int[] nums) {
@@ -51,6 +51,26 @@ public class leetcode_283 {
         }
         for (int i = slow; i < nums.length; i++) {
             nums[i] = 0;
+        }
+    }
+
+    public static void moveZeroes3(int[] nums){
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                count++;
+            }
+        }
+        int slow = 0;
+        for (int fast = 0; fast < nums.length; fast++) {
+            if (nums[fast] != 0) {
+                nums[slow++] = nums[fast];
+            }
+        }
+        if (count > 0) {
+            for (int i = nums.length-count; i <nums.length ; i++) {
+                nums[i] = 0;
+            }
         }
     }
 }

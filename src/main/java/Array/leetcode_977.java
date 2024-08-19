@@ -39,4 +39,9 @@ public class leetcode_977 {
     }
       return result;
   }
+
+  //todo 220240819
+//  public static int[] sortedSquares03(int[] nums) {
+//
+//  }
 }

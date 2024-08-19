@@ -9,7 +9,7 @@ package Array;
 public class leetcode_844 {
     public static void main(String[] args) {
 //        boolean a = backspaceCompare02("ab####c","ad##c");
-        boolean b = backspaceCompare02("ab##","c#d#");
+        boolean b = backspaceCompare03("a#c","b");
         System.out.println(b);
     }
     public static boolean backspaceCompare(String s, String t) {
@@ -113,6 +113,27 @@ public class leetcode_844 {
                 if (sb.length() > 0) {
                     sb.deleteCharAt(sb.length() - 1);
                 }
+            }
+        }
+        return sb.toString();
+    }
+
+    public static boolean backspaceCompare03(String s, String t) {
+        return removeSharp04(s).equals(removeSharp04(t));
+    }
+
+    public static String removeSharp04(String s){
+        StringBuffer sb = new StringBuffer();
+        char[] charArray = s.toCharArray();
+        int offset = 0;
+        for (int i = charArray.length - 1; i >= 0; i--) {
+            if (charArray[i] == '#') {
+                offset++;
+            } else if (offset != 0) {
+                offset--;
+                charArray[i] = '#';
+            } else if (offset == 0) {
+                sb.append(charArray[i]);
             }
         }
         return sb.toString();
