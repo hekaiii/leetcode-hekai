@@ -59,4 +59,8 @@ public class leetcode_904 {
         }
         return maxLen;
     }
+//    public static int totalFruit02(int[] tree) {
+//
+//    }
+
 }

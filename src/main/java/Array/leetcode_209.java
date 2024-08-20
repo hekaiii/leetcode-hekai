@@ -10,7 +10,8 @@ public class leetcode_209 {
 
   public static void main(String[] args) {
         int[] a = new int[]{2,3,1,2,4,3};
-        int i = minSubArrayLen06(7, a);
+//        int[] a = new int[]{2,3,1,6,4,3};
+        int i = minSubArrayLen07(7, a);
         System.out.println(i);
 
 //    for (int j = 0; j < 10; j++) {
@@ -175,4 +176,36 @@ public class leetcode_209 {
     return result == Integer.MAX_VALUE ? 0 : result;
   }
 
+  public static int minSubArrayLen07(int target, int[] nums) {
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] >= target) {
+        return 1;
+      }
+    }
+    if (nums.length == 1 && nums[0] < target) {
+      return 0;
+    }
+    int res = 0;
+    int slow = 0;
+    int count = nums[0];
+    for (int fast = 1; fast < nums.length; fast++) {
+      count += nums[fast];
+      if (count >= target && res == 0) {
+        res = fast - slow + 1;
+        count -= nums[slow++];
+        while (count >= target) {
+          res = Integer.min(res, (fast - slow + 1));
+          count -= nums[slow++];
+        }
+      } else if (count >= target && res != 0) {
+        res = Integer.min(res, (fast - slow + 1));
+        count -= nums[slow++];
+        while (count >= target) {
+          res = Integer.min(res, (fast - slow + 1));
+          count -= nums[slow++];
+        }
+      }
+    }
+    return res;
+  }
 }

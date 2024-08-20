@@ -12,7 +12,8 @@ public class leetcode_977 {
 
   public static void main(String[] args) {
     int[] nums = new int[]{-4, -1, 0, 3, 10};
-    System.out.println(sortedSquares02(nums));
+    String string = Arrays.toString(sortedSquares03(nums));
+    System.out.println(string);
   }
 
   public static int[] sortedSquares01(int[] nums) {
@@ -41,7 +42,19 @@ public class leetcode_977 {
   }
 
   //todo 220240819
-//  public static int[] sortedSquares03(int[] nums) {
-//
-//  }
+  public static int[] sortedSquares03(int[] nums) {
+    int[] result = new int[nums.length];
+    int l = 0;
+    int r = nums.length - 1;
+    for (int i = nums.length-1; i >= 0; i--) {
+      if (nums[l] * nums[l] >= nums[r] * nums[r]) {
+        result[i] = nums[l] * nums[l];
+        l++;
+      } else {
+        result[i] = nums[r] * nums[r];
+        r--;
+      }
+    }
+    return result;
+  }
 }
