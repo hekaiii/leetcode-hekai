@@ -1,12 +1,16 @@
 package Array;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class leetcode_904 {
     public static void main(String[] args) {
         int[] a = new int[]{3,3,3,1,2,1,1,2,3,3,4};
-        System.out.println(totalFruit01(a));
+        int[] b = new int[]{1,2,1};
+        int[] c = new int[]{1,2,3,2,2};
+        int[] d = new int[]{0,1,1,4,3};
+        System.out.println(totalFruit02(d));
     }
     public static int totalFruit(int[] fruits) {
         int start = 0;
@@ -59,8 +63,36 @@ public class leetcode_904 {
         }
         return maxLen;
     }
-//    public static int totalFruit02(int[] tree) {
-//
-//    }
+    public static int totalFruit02(int[] tree) {
+        if (tree.length <= 2) {
+            return tree.length;
+        }
+        HashSet<Integer> ints = new HashSet<>();
+        int slow = 0;
+        int result = 0;
+        ints.add(tree[0]);
+        for (int i = 1; i < tree.length; i++) {
+            if (ints.size() == 1 && !ints.contains(tree[i])) {
+                ints.add(tree[i]);
+                result=Integer.max(result, i - slow + 1);
+            } else if (ints.size() == 1 && ints.contains(tree[i])) {
+                result=Integer.max(result, i - slow + 1);
+            } else if (ints.size() == 2 && ints.contains(tree[i])) {
+                result=Integer.max(result, i - slow + 1);
+            } else if (ints.size() == 2 && !ints.contains(tree[i])) {
+                ints.add(tree[i]);
+                int tar = tree[i - 1];
+                for (int j = i-1; j >= 0; j--) {
+                    if (tree[j] != tar) {
+                        ints.remove(tree[j]);
+                        slow = j+1;
+                        result=Integer.max(result, i - slow);
+                        break;
+                    }
+                }
+            }
+        }
+        return result;
+    }
 
 }

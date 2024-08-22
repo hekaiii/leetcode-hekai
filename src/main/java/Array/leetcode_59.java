@@ -37,4 +37,8 @@ public class leetcode_59 {
     }
     return result;
   }
+
+//  public static int[][] generateMatrix01(int n) {
+//
+//  }
 }
