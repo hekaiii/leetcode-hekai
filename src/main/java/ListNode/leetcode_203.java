@@ -1,8 +1,5 @@
 package ListNode;
 
-import javax.swing.plaf.ColorUIResource;
-import java.util.List;
-
 /**
  * Created with IntelliJ IDEA.
  *
@@ -61,4 +58,20 @@ public class leetcode_203 {
         }
         return pre.next;
     }
+
+    public ListNode removeElements02(ListNode head, int val) {
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode cur = dummy;
+        while (cur.next != null) {
+            if (cur.next.val == val) {
+                cur.next = cur.next.next;
+            } else {
+                cur = cur.next;
+            }
+        }
+        return dummy.next;
+    }
+
+
 }

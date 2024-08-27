@@ -7,18 +7,18 @@ package ListNode;
  * @Date: 2022/2/24 13:21
  */
 
-class ListNode {
+class ListNode01 {
     int val;
     ListNode next;
 
-    public ListNode() {
+    public ListNode01() {
     }
 
-    public ListNode(int val) {
+    public ListNode01(int val) {
         this.val = val;
     }
 
-    public ListNode(int val, ListNode next) {
+    public ListNode01(int val, ListNode next) {
         this.val = val;
         this.next = next;
     }
