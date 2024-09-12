@@ -14,6 +14,22 @@ package ListNode;
 public class leetcode_203 {
 
     public static void main(String[] args) {
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        ListNode node5 = new ListNode(5);
+
+        // 手动链接这些节点形成一个链表
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+
+        ListNode head = node1;
+
+        ListNode listNode = removeElements03(head, 3);
+        listNode.print(head);
 
     }
 
@@ -73,5 +89,55 @@ public class leetcode_203 {
         return dummy.next;
     }
 
+    public static ListNode removeElements03(ListNode head, int val) {
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode cursor = dummy;
+        while (cursor.next != null) {
+            if (cursor.next.val == val) {
+                cursor.next = cursor.next.next;
+            } else {
+                cursor = cursor.next;
+            }
+        }
+        return dummy.next;
+    }
 
+    public static ListNode removeElements04(ListNode head, int val){
+        ListNode dummy = new ListNode();
+        ListNode cursor = new ListNode();
+        dummy.next = head;
+        cursor = dummy;
+        while (cursor.next != null) {
+            if (cursor.next.val == val) {
+                cursor.next = cursor.next.next;//改变节点索引的操作
+            } else {
+                cursor = cursor.next;
+            }
+        }
+        return dummy.next;
+    }
+
+    public static ListNode removeElements05(ListNode head, int val) {
+        if (head == null) {
+            return head;
+        }
+        while (head.val == val) {
+            if (head.next != null) {
+                head = head.next;
+            } else {
+                return null;
+            }
+        }
+        ListNode cursor = new ListNode();
+        cursor = head;
+        while (cursor.next != null) {
+            if (cursor.next.val == val) {
+                cursor.next = cursor.next.next;
+            } else {
+                cursor = cursor.next;
+            }
+        }
+        return head;
+    }
 }

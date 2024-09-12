@@ -21,4 +21,13 @@ public class ListNode {
     this.val = val;
     this.next = next;
   }
+
+  //遍历打印方法
+  public static void print(ListNode listNode) {
+    while (listNode != null) {
+      System.out.print(listNode.val + " -> ");
+      listNode = listNode.next;
+    }
+    System.out.println("null");
+  }
 }

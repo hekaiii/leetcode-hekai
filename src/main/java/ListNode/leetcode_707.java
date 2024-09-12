@@ -7,23 +7,6 @@ package ListNode;
  * @Date: 2022/2/24 13:21
  */
 
-class ListNode01 {
-    int val;
-    ListNode next;
-
-    public ListNode01() {
-    }
-
-    public ListNode01(int val) {
-        this.val = val;
-    }
-
-    public ListNode01(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
 public class leetcode_707 {
     int size;
     ListNode head;
