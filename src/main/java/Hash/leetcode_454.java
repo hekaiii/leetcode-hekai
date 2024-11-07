@@ -32,4 +32,53 @@ public class leetcode_454 {
         }
         return flag;
     }
+
+    //垃圾解
+    public int fourSumCount01(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
+        HashMap<Integer, Integer> map1 = new HashMap<>();
+        HashMap<Integer, Integer> map2 = new HashMap<>();
+        int n = nums1.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                map1.put(nums1[i] + nums2[j], map1.getOrDefault(nums1[i] + nums2[j], 0) + 1);
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                map2.put(nums3[i] + nums4[j], map2.getOrDefault(nums3[i] + nums4[j], 0) + 1);
+            }
+        }
+        int result = 0;
+        for (Integer key : map1.keySet()) {
+            if (map2.containsKey(-key)) {
+                result += map2.get(-key)*map1.get(key);
+            }
+        }
+        return result;
+    }
+
+
+    public int fourSumCount02(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int n = nums1.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                map.put(nums1[i] + nums2[j], map.getOrDefault(nums1[i] + nums2[j], 0) + 1);
+            }
+        }
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                int sum = -(nums3[i] + nums4[j]);
+                if (map.containsKey(sum)) {
+                    count += map.get(sum);
+                }
+            }
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+
+    }
 }

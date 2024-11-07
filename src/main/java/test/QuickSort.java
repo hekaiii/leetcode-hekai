@@ -22,8 +22,9 @@ public class QuickSort {
                 array[pointer] = temp;
                 pointer++;
             }
-            System.out.println(Arrays.toString(array));
+
         }
+        System.out.println("遍历结束"+Arrays.toString(array));
         // 将中心元素和指针指向的元素交换位置
         int temp = array[pointer];
         array[pointer] = array[high];
@@ -44,8 +45,36 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int[] array = { 5, 8, 6, 3, 9, 2, 1, 7 };
+//        quickSort(array, 0, array.length -1);
+//        System.out.println("排序后的结果");
+//        System.out.println(Arrays.toString(array));
         quickSort(array, 0, array.length -1);
         System.out.println("排序后的结果");
         System.out.println(Arrays.toString(array));
+    }
+
+    public static void quickSort01(int[] array, int low, int high) {
+        if (low < high) {
+            int position = partition01(array, low, high);
+            quickSort01(array, low, position - 1);
+            quickSort01(array, position + 1, high);
+        }
+    }
+
+    private static int partition01(int[] array, int low, int high) {
+        int target = array[high];
+        int pointer = 0;
+        for (int i = 0; i < high; i++) {
+            if (array[i]<=target) {
+                int temp = array[i];
+                array[i] = array[pointer];
+                array[pointer] = temp;
+                pointer++;
+            }
+        }
+        int temp = array[high];
+        array[high] = array[pointer];
+        array[pointer] = temp;
+        return pointer;
     }
 }

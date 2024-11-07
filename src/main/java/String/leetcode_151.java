@@ -9,12 +9,7 @@ import java.util.LinkedList;
  * @Date: 2022/3/16 1:21
  */
 public class leetcode_151 {
-    public static void main(String[] args) {
-        String b = " asdasd df f";
-        System.out.println(b.substring(11));
-        String s = reverseWords(" asdasd df f ");
-        System.out.println(s);
-    }
+
     public static String reverseWords(String s) {
         s = s + " ";
         LinkedList<String> str = new LinkedList<>();
@@ -38,5 +33,25 @@ public class leetcode_151 {
             }
         }
         return sb.toString();
+    }
+
+    public static String reverseWords01(String s) {
+        String[] split = s.trim().split("\\s+");
+        StringBuffer sb = new StringBuffer();
+        for (int i = split.length-1; i >= 0; i--) {
+            sb.append(split[i]);
+            if (i != 0) {
+                sb.append(" ");
+            }
+        }
+        return sb.toString();
+    }
+    public static void main(String[] args) {
+//        String b = " asdasd df f";
+//        System.out.println(b.substring(11));
+//        String s = reverseWords(" asdasd df f ");
+//        System.out.println(s);
+        String b = "        asdasd      df f";
+        System.out.println(reverseWords01(b));
     }
 }

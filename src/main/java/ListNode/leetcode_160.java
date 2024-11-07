@@ -10,15 +10,13 @@ public class leetcode_160 {
     if (headA == null || headB == null) {
       return null;
     }
-    ListNode pA = headA;
-    ListNode pB = headB;
-    while (pA != pB) {
-      pA = pA == null ? headB : pA.next;
-      pB = pB == null ? headA : pB.next;
-      System.out.print("pA:" + (pA == null ? "null" : pA.val));
-      System.out.println(" pB:" + (pB == null ? "null" : pB.val));
+    ListNode A = headA;
+    ListNode B = headB;
+    while (A != B) {
+      A = A == null ? headB : A.next;
+      B = B == null ? headA : B.next;
     }
-    return pA;
+    return A;
   }
 
   public static void main(String[] args) {

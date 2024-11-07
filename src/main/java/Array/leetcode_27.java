@@ -8,9 +8,8 @@ package Array;
  */
 public class leetcode_27 {
     public static void main(String[] args) {
-        int[] a = new int[]{0,1,2,3,4,5,2};
-        int[] b = new int[]{3,2,2,3};
-        int i = removeElement4(b, 3);
+        int[] a = new int[]{2};
+        int i = removeElement6(a, 3);
         System.out.println(i);
     }
     public static int removeElement(int[] nums, int val) {
@@ -73,16 +72,6 @@ public class leetcode_27 {
         return result;
     }
 
-    public static int removeElement5(int[] nums, int val){
-        int slow = 0;
-        for (int fast = 0; fast < nums.length; fast++) {
-            if (nums[fast] != val) {
-                nums[slow] = nums[fast];
-                slow++;
-            }
-        }
-        return nums.length - slow;
-    }
 
     public static int removeElement6(int[] nums, int val) {
         int slow = 0;

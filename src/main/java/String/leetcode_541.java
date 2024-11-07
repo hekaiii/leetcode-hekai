@@ -23,13 +23,23 @@ public class leetcode_541 {
         return String.copyValueOf(chars);
     }
 
+
+    public static String reverseStr01(String s, int k) {
+        char[] charArray = s.toCharArray();
+        for (int i = 0; i < charArray.length; i += 2 * k) {
+            int left = i;
+            int right = Math.min(left + k - 1, charArray.length - 1);
+            while (right > left) {
+                char temp = charArray[left];
+                charArray[left] = charArray[right];
+                charArray[right] = temp;
+                right--;
+                left++;
+            }
+        }
+        return new String(charArray);
+    }
     public static void main(String[] args) {
-        char a = 'a';
-        char b = 'b';
-        b ^= a;
-        a ^= b;
-        b ^= a;
-        System.out.println(a);
-        System.out.println(b);
+
     }
 }
