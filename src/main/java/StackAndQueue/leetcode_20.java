@@ -9,10 +9,7 @@ import java.util.Stack;
  * @Date: 2022/3/22 1:16
  */
 public class leetcode_20 {
-    public static void main(String[] args) {
-        String a = "{]]]]]}]]";
-        System.out.println(isValid(a));
-    }
+
     public static boolean isValid(String s) {
         Stack<Character> a = new Stack<>();
         char[] chars = s.toCharArray();
@@ -30,5 +27,28 @@ public class leetcode_20 {
             }
         }
         return a.isEmpty();
+    }
+
+    public static boolean isValid01(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                stack.push(')');
+            } else if (c == '[') {
+                stack.push(']');
+            } else if (c == '{') {
+                stack.push('}');
+            } else if (!stack.isEmpty() && c == stack.peek()) {
+                stack.pop();
+            } else {
+                return false;
+            }
+        }
+        return stack.isEmpty();
+    }
+    public static void main(String[] args) {
+        String a = "{]]]]]}]]";
+        String b = "{[()]}";
+        System.out.println(isValid01(b));
     }
 }
