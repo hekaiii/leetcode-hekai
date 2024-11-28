@@ -1,11 +1,11 @@
 package BinaryTree;
 
-import sun.reflect.generics.tree.Tree;
-import test.BinarySearchTree;
-
-import javax.swing.tree.TreeNode;
-import java.util.*;
-import java.util.logging.Level;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * @Date: 2022/4/23 21:38
@@ -31,15 +31,6 @@ public class leetcode_102 {
         resList.get(deep - 1).add(node.val);
         level(node.left, deep);
         level(node.right, deep);
-    }
-
-    public static void main(String[] args) {
-        leetcode_102 tree = new leetcode_102();
-        int input[]= {1,2,3,4,5,6,7};
-        for(int i=0; i<input.length; i++) {
-            tree.insertAVL(input[i]);
-        }
-        System.out.println(levelOrder(tree.root));
     }
 
     //插入二叉平衡树结点
@@ -93,16 +84,70 @@ public class leetcode_102 {
 
     }
 
-    static private class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
+    public static List<List<Integer>> levelOrder01(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
+            return result;
         }
+
+        Queue<TreeNode> ints = new ArrayDeque<>();
+        ints.add(root);
+
+        while (!ints.isEmpty()) {
+            int size = ints.size();
+            ArrayList<Integer> list = new ArrayList<>();
+            while (size > 0) {
+                TreeNode poll = ints.poll();
+                list.add(poll.val);
+                size--;
+                if (poll.left != null) {
+                    ints.add(poll.left);
+                }
+                if (poll.right != null) {
+                    ints.add(poll.right);
+                }
+                if (size == 0) {
+                    result.add(list);
+                }
+            }
+        }
+
+        return result;
+    }
+    public static List<List<Integer>> levelOrder02(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        ArrayDeque<TreeNode> lists = new ArrayDeque<>();
+        lists.add(root);
+        while (!lists.isEmpty()) {
+            int size = lists.size();
+            ArrayList<Integer> level = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode pop = lists.pop();
+                level.add(pop.val);
+                if (pop.left != null) {
+                    lists.add(pop.left);
+                }
+                if (pop.right != null) {
+                    lists.add(pop.right);
+                }
+            }
+            result.add(level);
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+//        root.left.left = new TreeNode(4);
+//        root.left.right = new TreeNode(5);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(7);
+        List<List<Integer>> list = levelOrder01(root);
+        System.out.println(String.valueOf(list));
     }
 }

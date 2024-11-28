@@ -7,15 +7,14 @@ import java.util.Stack;
 
 /**
  * @Date: 2022/4/23 20:33
- *
  */
 
 
-
 public class leetcode_144 {
+
     public List<Integer> preorderTraversal(TreeNode root) {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        preorder(root,arrayList);
+        preorder(root, arrayList);
         return arrayList;
     }
 
@@ -24,8 +23,8 @@ public class leetcode_144 {
             return;
         }
         array.add(root.val);
-        preorder(root.left,array);
-        preorder(root.right,array);
+        preorder(root.left, array);
+        preorder(root.right, array);
     }
 
     public static List<Integer> preorderTraversal01(TreeNode root) {
@@ -50,11 +49,7 @@ public class leetcode_144 {
     }
 
     /**
-     前中后
-     前：中左右
-     中：左中右
-     后：左右中
-     *
+     * 前中后 前：中左右 中：左中右 后：左右中
      */
     public static void preorder02(TreeNode root, List<Integer> result) {
         if (root == null) {
@@ -64,6 +59,7 @@ public class leetcode_144 {
         preorder02(root.left, result);
         preorder02(root.right, result);
     }
+
     public static void preorder03(TreeNode root, List<Integer> result) {
         if (root == null) {
             return;
@@ -73,6 +69,7 @@ public class leetcode_144 {
         result.add(root.val);
         preorder02(root.right, result);
     }
+
     public static void preorder04(TreeNode root, List<Integer> result) {
         if (root == null) {
             return;
@@ -104,8 +101,7 @@ public class leetcode_144 {
     }
 
     /**
-     *    非递归 后续遍历 前序是ABC 后序就是BCA=ABC->ACB->BCA
-     *    现在前序的基础上改变 BC的顺序，再将结果反转
+     * 非递归 后续遍历 前序是ABC 后序就是BCA=ABC->ACB->BCA 现在前序的基础上改变 BC的顺序，再将结果反转
      */
 
     public static List<Integer> preorderTraversal04(TreeNode root) {
@@ -130,11 +126,72 @@ public class leetcode_144 {
         return list;
     }
 
+    //前
+    public static List<Integer> preorderTraversal05(TreeNode root) {
+        ArrayList<Integer> list = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode pop = stack.pop();
+            list.add(pop.val);
+            if (pop.right != null) {
+                stack.push(pop.right);
+            }
+            if (pop.left != null) {
+                stack.push(pop.left);
+            }
+        }
+        return list;
+    }
+    //后
+    public static List<Integer> preorderTraversal06(TreeNode root) {
+        ArrayList<Integer> list = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode pop = stack.pop();
+            list.add(pop.val);
+            if (pop.left != null) {
+                stack.push(pop.right);
+            }
+            if (pop.right != null) {
+                stack.push(pop.left);
+            }
+        }
+        Collections.reverse(list);
+        return list;
+    }
+
+    //中
+    public static List<Integer> inorderTraversal(TreeNode root) {
+        ArrayList<Integer> list = new ArrayList<>();
+        if (root == null) {
+            return list;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cursor = root;
+        while (cursor != null || !stack.isEmpty()) {
+            if (cursor == null) {
+                TreeNode pop = stack.pop();
+                list.add(pop.val);
+                cursor = pop.right;
+            } else if (cursor != null) {
+                stack.push(cursor);
+                cursor = cursor.left;
+            }
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(2);
-        root.left = new TreeNode(1);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
         root.right = new TreeNode(3);
-        List<Integer> list = preorderTraversal01(root);
+//        root.left.left = new TreeNode(4);
+//        root.left.right = new TreeNode(5);
+//        root.right.left = new TreeNode(6);
+//        root.right.right = new TreeNode(7);
+        List<Integer> list = inorderTraversal(root);
         System.out.println(String.valueOf(list));
     }
 }
