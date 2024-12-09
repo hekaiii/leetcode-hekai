@@ -139,6 +139,30 @@ public class leetcode_102 {
         return result;
     }
 
+    public static List<List<Integer>> levelOrder03(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        ArrayDeque<TreeNode> tree = new ArrayDeque<>();
+        tree.add(root);
+        while (tree.size() != 0) {
+            int size = tree.size();
+            ArrayList<Integer> list = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode pop = tree.pop();
+                list.add(pop.val);
+                if (pop.left != null) {
+                    tree.add(pop.left);
+                }
+                if (pop.right != null) {
+                    tree.add(pop.right);
+                }
+            }
+            result.add(list);
+        }
+        return result;
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
