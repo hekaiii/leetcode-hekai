@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import javax.print.attribute.standard.PresentationDirection;
+
 /**
  * @Author: hek32
  * @Description:
@@ -16,6 +18,7 @@ public class leetcode_222 {
     if (node == null) {
       return;
     }
+
     preorder(node.left);
     preorder(node.right);
   }
