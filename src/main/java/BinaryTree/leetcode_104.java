@@ -1,10 +1,5 @@
 package BinaryTree;
 
-import javax.swing.text.LabelView;
-import javax.swing.tree.TreeNode;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @Date: 2022/4/26 13:01
  */
@@ -15,7 +10,6 @@ public class leetcode_104 {
         level(root, deep);
         return depth;
     }
-
     public void level(TreeNode root, int deep) {
         if (root == null) {
             return;
@@ -27,24 +21,18 @@ public class leetcode_104 {
         level(root.left, deep);
         level(root.right, deep);
     }
-
-
-    private class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
+    public static int maxDepth01(TreeNode root) {
+        if (root == null) {
+            return 0;
         }
+        return Math.max(maxDepth01(root.left), maxDepth01(root.right)) + 1;
+    }
 
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        System.out.println(maxDepth01(root));
     }
 }

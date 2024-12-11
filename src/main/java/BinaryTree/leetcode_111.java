@@ -17,7 +17,6 @@ public class leetcode_111 {
         }
         return deep;
     }
-
     public int min(TreeNode root) {
         if (root == null) {
             return 0;
@@ -31,7 +30,6 @@ public class leetcode_111 {
         int right = minDepth(root.right);
         return Math.min(left, right) + 1;
     }
-
     public int minDepth01(TreeNode root) {
         int result = 0;
         if (root == null) {
@@ -57,22 +55,30 @@ public class leetcode_111 {
         }
         return result;
     }
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
+    public static int minDepth02(TreeNode root) {
+        if (root == null) {
+            return 0;
         }
-
-        TreeNode(int val) {
-            this.val = val;
+        int left = minDepth02(root.left);
+        int right = minDepth02(root.right);
+        if (left == 0 && right != 0) {
+            return right + 1;
         }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
+        if (left != 0 && right == 0) {
+            return left + 1;
         }
+        if (left != 0 && right != 0) {
+            return Math.max(left, right) + 1;
+        } else {
+            return 1;
+        }
+    }
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.left.left = new TreeNode(4);
+        root.left.left.left = new TreeNode(4);
+        root.left.left.left.left = new TreeNode(4);
+        System.out.println(minDepth02(root));
     }
 }
