@@ -1,6 +1,6 @@
 package BinaryTree;
 
-import java.util.Arrays;
+import com.sun.org.apache.bcel.internal.generic.POP;
 
 /**
  * @Author: hek32
@@ -8,33 +8,38 @@ import java.util.Arrays;
  * @Date: 2024/12/14
  */
 public class leetcode_106 {
-  public TreeNode buildTree(int[] inorder, int[] postorder) {
-    if (postorder.length == 0) {
+  public static TreeNode buildTree(int[] inorder, int[] postorder) {
+    if (inorder.length == 0) {
       return null;
     }
-    TreeNode root = new TreeNode(postorder[postorder.length - 1]);
+    return getSubTreeNode(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
+  }
 
-    int inorderIndex = 0;
-    for (int i = 0; i < inorder.length; i++) {
-      if (inorder[i] == root.val) {
-        inorderIndex = i;
+  private static TreeNode getSubTreeNode(int[] inorder, int inStart, int inEnd, int[] postorder, int postStart,
+      int postEnd) {
+    if (inEnd < inStart || postEnd < postStart) {
+      return null;
+    }
+    TreeNode root = new TreeNode(postorder[postEnd]);
+    int index = 0;
+    for (; index < inEnd; index++) {
+      if (inorder[index] == root.val) {
+        break;
       }
     }
-    int[] leftTree =new int[inorderIndex];
-    for (int i = 0; i < inorderIndex; i++) {
-      leftTree[i] = inorder[i];
-    }
-
-    for (int i = inorderIndex; i < postorder.length - 1; i++) {
-
-
-    }
-
-    int[] rightTree = new int[];
-
-    buildTree();
+    int leftSize = index - inStart;
+    root.left = getSubTreeNode(inorder, inStart, index - 1, postorder, postStart,
+        postStart + leftSize - 1);
+    root.right = getSubTreeNode(inorder, index + 1, inEnd, postorder, postStart + leftSize,
+        postEnd - 1);
+    return root;
   }
-  public static void main(String[] args) {
 
+
+  public static void main(String[] args) {
+    int[] inorder = {9, 3, 15, 20, 7};
+    int[] postorder = {9, 15, 7, 20, 3};
+
+    TreeNode treeNode = buildTree(inorder, postorder);
   }
 }
