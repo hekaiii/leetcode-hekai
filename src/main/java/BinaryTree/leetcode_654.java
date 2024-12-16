@@ -75,6 +75,29 @@ public class leetcode_654 {
     return root;
   }
 
+  public TreeNode constructMaximumBinaryTree02(int[] nums) {
+    if (nums.length == 1) {
+      return new TreeNode(nums[0]);
+    }
+    return construct01(nums, 0, nums.length - 1);
+
+  }
+  private static TreeNode construct01(int[] nums, int start, int end){
+    if (end < start) {
+      return null;
+    }
+    int maxIndex = start;
+    for (int i = start; i <= end; i++) {
+      if (nums[i] > nums[maxIndex]) {
+        maxIndex = i;
+      }
+    }
+    TreeNode node = new TreeNode(nums[maxIndex]);
+    node.left = construct01(nums, start, maxIndex - 1);
+    node.right = construct01(nums, maxIndex + 1, end);
+    return node;
+  }
+
   public static void main(String[] args) {
     int[] a = {3, 2, 1, 6, 0, 5};
     TreeNode treeNode = constructMaximumBinaryTree(a);
