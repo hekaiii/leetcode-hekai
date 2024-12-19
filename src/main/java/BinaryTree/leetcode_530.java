@@ -32,6 +32,5 @@ public class leetcode_530 {
     root.right = new TreeNode(6);
     root.left.left = new TreeNode(1);
     root.left.right = new TreeNode(1);
-    System.out.println(getMinimumDifference(root));
   }
 }
