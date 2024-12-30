@@ -38,9 +38,10 @@ public class leetcode_77 {
       result.add(new ArrayList<>(list));
       return;
     }
-    for (int i = start; i <= n; i++) {
+    //当前节点下的每一个孩子
+    for (int i = start; i <= (n - (k - list.size()) + 1); i++) {
       list.add(i);
-      getResult(n, k, start + 1);
+      getResult(n, k, i + 1);
       list.remove(list.size() - 1);
     }
   }
