@@ -57,24 +57,6 @@ public class leetcode_203 {
         return head;
     }
 
-    //虚头节点移除
-    public ListNode removeElements01(ListNode head, int val) {
-        ListNode pre = new ListNode(-1, head);
-        ListNode cur = head;
-        if (head == null) {
-            return null;
-        }
-        while (cur != null) {
-            if (cur.val == val) {
-                pre.next = cur.next;
-            } else {
-                pre = cur;
-            }
-            cur = cur.next;
-        }
-        return pre.next;
-    }
-
     public ListNode removeElements02(ListNode head, int val) {
         ListNode dummy = new ListNode();
         dummy.next = head;
