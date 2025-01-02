@@ -1,5 +1,7 @@
 package ListNode;
 
+import javax.swing.table.TableModel;
+
 /**
  * @Author: hek32
  * @Description:
@@ -23,7 +25,24 @@ public class Leetcode_24 {
     }
     return dummy.next;
   }
+  public static ListNode swapPairs01(ListNode head) {
+    if (head == null || head.next == null) {
+      return head;
+    }
+    ListNode slow = head;
+    ListNode fast = head.next;
+    while (fast != null) {
+      ListNode tmp = fast;
+      fast = fast.next;
+      tmp.next = slow;
+      slow = tmp;
+      if (fast.next.next == null) {
+        slow.next = fast;
+      }
 
+    }
+    return slow;
+  }
   public static void main(String[] args) {
     ListNode head = ListNode.init(6);
     ListNode listNode = swapPairs(head);

@@ -1,5 +1,6 @@
 package ListNode;
 
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -73,11 +74,20 @@ public class leetcode_206 {
         }
         return pre;
     }
-
+    public static ListNode reverseList04(ListNode head) {
+        ListNode slow = null;
+        ListNode fast = head;
+        while (fast != null) {
+            ListNode tmp = fast;
+            fast = fast.next;
+            tmp.next = slow;
+            slow = tmp;
+        }
+        return slow;
+    }
     public static void main(String[] args) {
         ListNode listNode = ListNode.init(5);
-        ListNode.print(listNode);
-        ListNode listNode1 = reverseList03(listNode);
+        ListNode listNode1 = reverseList04(listNode);
         ListNode.print(listNode1);
     }
 
