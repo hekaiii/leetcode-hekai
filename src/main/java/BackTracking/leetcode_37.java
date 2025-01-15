@@ -10,10 +10,7 @@ public class leetcode_37 {
     backtracking(0, 0, board);
   }
 
-  private void backtracking(int row, int column, char[][] board) {
-    if (row == 9 && column == 9) {
-      return;
-    }
+  private boolean backtracking(int row, int column, char[][] board) {
     for (int r = row; r <= 9; r++) {
       for (int c = column; c <= 9; c++) {
         if (board[r][c] != '.') {
