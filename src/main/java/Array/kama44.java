@@ -3,7 +3,7 @@ package Array;
 import java.util.Scanner;
 
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * @Date: 2024/8/23
  */

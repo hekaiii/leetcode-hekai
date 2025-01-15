@@ -3,7 +3,7 @@ package ListNode;
 import java.util.LinkedHashSet;
 
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * @Date: 2024/9/24
  */

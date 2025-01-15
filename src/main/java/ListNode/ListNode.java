@@ -1,7 +1,7 @@
 package ListNode;
 
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * @Date: 2024/8/27
  */

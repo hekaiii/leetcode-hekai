@@ -3,7 +3,7 @@ package ListNode;
 import javax.swing.table.TableModel;
 
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * @Date: 2024/9/11
  */

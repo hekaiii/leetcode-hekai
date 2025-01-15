@@ -7,7 +7,7 @@ import java.util.List;
 import javax.print.DocFlavor.READER;
 
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * void backtracking(参数) {
  *     if (终止条件) {

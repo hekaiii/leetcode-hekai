@@ -2,7 +2,7 @@ package TwoPointers;
 
 import ListNode.ListNode;
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * @Date: 2024/11/6
  */

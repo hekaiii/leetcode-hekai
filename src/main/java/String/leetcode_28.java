@@ -1,7 +1,7 @@
 package String;
 
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * KMP算法主要分为两步，第一步计算出模板串的LPS数组，第二步用模板串+LPS数组去和给出数组进行比较
  * 难点一：LPS数组

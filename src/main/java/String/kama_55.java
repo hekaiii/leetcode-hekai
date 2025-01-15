@@ -3,7 +3,7 @@ package String;
 import java.util.Scanner;
 
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * @Date: 2024/10/16
  */

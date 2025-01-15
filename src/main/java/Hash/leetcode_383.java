@@ -3,7 +3,7 @@ package Hash;
 import java.util.HashMap;
 
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * @Date: 2024/10/11
  */

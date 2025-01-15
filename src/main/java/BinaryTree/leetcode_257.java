@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.spi.CurrencyNameProvider;
 
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * 回溯：current.remove(current.size() - 1);
  * 拉完屎冲干净，留给下一个人，将这次操作连带的东西清除掉，不干扰同深度的另一个叶子节点操作

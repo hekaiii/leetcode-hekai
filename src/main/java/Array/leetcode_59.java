@@ -1,7 +1,7 @@
 package Array;
 
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * @Date: 2023/8/17
  */

@@ -3,7 +3,7 @@ package TwoPointers;
 import java.util.Arrays;
 
 /**
- * @Author: hek32
+ * @Author: hekai
  * @Description:
  * @Date: 2024/11/5
  */
