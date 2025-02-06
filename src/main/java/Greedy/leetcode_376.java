@@ -12,24 +12,16 @@ public class leetcode_376 {
     if (nums.length == 1) {
       return 1;
     }
-    if (nums.length == 2) {
-      if (nums[0] == nums[1]) {
-        return 1;
-      } else {
-        return 2;
+    int up = 1;
+    int down = 1;
+    for (int i = 1; i < nums.length; i++) {
+      if (nums[i] - nums[i - 1] > 0) {
+        up = down + 1;
+      } else if (nums[i] - nums[i - 1] < 0) {
+        down = up + 1;
       }
     }
-    int result = 1;
-    int prediff = 0;
-    int curdiff = 0;
-    for (int i = 0; i < nums.length - 1; i++) {
-      curdiff = nums[i + 1] - nums[i];
-      if ((prediff <= 0) && (curdiff > 0) || (prediff >= 0) && (curdiff < 0)) {
-        result++;
-        prediff =
-      }
-    }
-    return result;
+    return Math.max(up, down);
   }
 
   //分治
