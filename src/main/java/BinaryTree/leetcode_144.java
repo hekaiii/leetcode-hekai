@@ -1,6 +1,8 @@
 package BinaryTree;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
@@ -183,15 +185,85 @@ public class leetcode_144 {
         return list;
     }
 
+    public static List<Integer> preorderTraversal07(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        preorder05(root,result);
+        return result;
+    }
+
+    private static void preorder05(TreeNode root, List<Integer> result) {
+        if (root == null) {
+            return;
+        }
+        result.add(root.val);
+        preorder05(root.left,result);
+        preorder05(root.right,result);
+    }
+
+
+    //前 中左右
+    public static List<Integer> preorderTraversal08(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        Stack<TreeNode> nodes = new Stack<>();
+        nodes.push(root);
+        while(!nodes.isEmpty()) {
+            TreeNode pop = nodes.pop();
+            result.add(pop.val);
+            if (pop.right != null) {
+                nodes.push(pop.right);
+            }
+            if (pop.left != null) {
+                nodes.push(pop.left);
+            }
+        }
+        return result;
+    }
+
+    //中 左中右
+    public static List<Integer> preorderTraversal09(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> nodes = new Stack<>();
+        TreeNode cursor = root;
+        while(cursor != null || !nodes.isEmpty()) {
+            if (cursor != null) {
+                nodes.push(cursor);
+                cursor = cursor.left;
+            } else if (cursor == null) {
+                TreeNode pop = nodes.pop();
+                result.add(pop.val);
+                cursor = pop.right;
+            }
+        }
+        return result;
+    }
+
+    //后 左右中
+    public static List<Integer> preorderTraversal10(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> nodes = new Stack<>();
+        nodes.push(root);
+        while(!nodes.isEmpty()) {
+            TreeNode pop = nodes.pop();
+            result.add(pop.val);
+            if (pop.left != null) {
+                nodes.push(pop.left);
+            }
+            if (pop.right != null) {
+                nodes.push(pop.right);
+            }
+        }
+        Collections.reverse(result);
+        return result;
+    }
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-//        root.left.left = new TreeNode(4);
-//        root.left.right = new TreeNode(5);
-//        root.right.left = new TreeNode(6);
-//        root.right.right = new TreeNode(7);
-        List<Integer> list = inorderTraversal(root);
+        TreeNode root = new TreeNode(2);
+
+        root.right = new TreeNode(1);
+        root.right.left = new TreeNode(3);
+        List<Integer> list = preorderTraversal07(root);
         System.out.println(String.valueOf(list));
     }
 }
