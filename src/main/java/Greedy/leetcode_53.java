@@ -1,5 +1,7 @@
 package Greedy;
 
+import java.util.concurrent.CountDownLatch;
+
 /**
  * @Author: hekai
  * @Description:
@@ -24,6 +26,21 @@ public class leetcode_53 {
     }
     return result;
 
+  }
+
+  public static int maxSubArray01(int[] nums) {
+    int result = Integer.MIN_VALUE;
+    int count = 0;
+    for (int i = 0; i < nums.length; i++) {
+      count += nums[i];
+      if (count > result) {
+        result = count;
+      }
+      if (count < 0) {
+        count = 0;
+      }
+    }
+    return result;
   }
   public static void main(String[] args) {
   }
