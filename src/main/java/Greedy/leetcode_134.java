@@ -30,7 +30,7 @@ public class leetcode_134 {
     return (totalCost >= 0) ? start : -1;
   }
   public static void main(String[] args) {
-    int[] a = {1, 2, 3, 4,5};
+    int[] a = {1, 2, 3, 4, 5};
     int[] b = {3, 4, 5, 1, 2};
     System.out.println(canCompleteCircuit(a, b));
   }
