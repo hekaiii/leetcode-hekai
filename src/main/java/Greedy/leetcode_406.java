@@ -18,10 +18,10 @@ public class leetcode_406 {
       return people;
     }
     Arrays.sort(people, (a, b) -> {
-      if (a != b) {
-        return b[0] - a[0];
+      if (a[0] != b[0]) {
+        return b[0] - a[0];//按第一个元素来降序
       }
-      return a[1] - b[1];
+      return a[1] - b[1];//按第二个元素来升序
     });
     List<int[]> list = new LinkedList<>();
     for (int[] person : people) {
