@@ -1,7 +1,6 @@
 package BinaryTree;
 
-import javax.swing.tree.TreeNode;
-import java.util.ArrayDeque;
+import BinaryTree.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,13 +8,13 @@ import java.util.List;
  * @Date: 2022/4/23 20:33
  */
 public class leetcode_94 {
-    public List<Integer> inorderTraversal(TreeNode root) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        inoreder(arrayList,root);
-        return arrayList;
+    public static List<Integer> inorderTraversal(TreeNode root) {
+        ArrayList<Integer> result = new ArrayList<>();
+        inoreder(result,root);
+        return result;
     }
 
-    public void inoreder(ArrayList<Integer> arrayList,TreeNode root) {
+    public static void inoreder(ArrayList<Integer> arrayList,TreeNode root) {
         if (root == null) {
             return;
         }
@@ -24,16 +23,11 @@ public class leetcode_94 {
         inoreder(arrayList,root.right);
     }
 
-    private class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
+    public static void main(String[] args) {
+        BinaryTree.TreeNode root = new BinaryTree.TreeNode(2);
+        root.right = new BinaryTree.TreeNode(1);
+        root.right.left = new BinaryTree.TreeNode(3);
+        List<Integer> list = inorderTraversal(root);
+        System.out.println(list.toString());
     }
 }

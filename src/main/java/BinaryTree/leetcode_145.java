@@ -1,38 +1,55 @@
 package BinaryTree;
 
-import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @Date: 2022/4/23 20:33
  */
 public class leetcode_145 {
-    public List<Integer> postorderTraversal(TreeNode root) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        postorder(arrayList,root);
-        return arrayList;
+    public static List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        postorderRecursion(root, result);
+        return result;
     }
 
-    public void postorder(ArrayList<Integer> arrayList,TreeNode root) {
+    private static void postorderRecursion(TreeNode root, List<Integer> result) {
         if (root == null) {
             return;
         }
-        postorder(arrayList,root.left);
-        postorder(arrayList,root.right);
-        arrayList.add(root.val);
+        postorderRecursion(root.left, result);
+        postorderRecursion(root.right, result);
+        result.add(root.val);
     }
 
-    static private class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
+    public static List<Integer> postorderTraversal01(TreeNode root) {
+        LinkedList<Integer> result = new LinkedList<>();
+        if (root == null) {
+            return result;
         }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode pop = stack.pop();
+            result.add(pop.val);
+            if (pop.left != null) {
+                stack.push(pop.left);
+            }
+            if (pop.right != null) {
+                stack.push(pop.right);
+            }
+        }
+         Collections.reverse(result);
+        return result;
+    }
+    public static void main(String[] args) {
+        BinaryTree.TreeNode root = new BinaryTree.TreeNode(2);
+        root.right = new BinaryTree.TreeNode(1);
+        root.right.left = new TreeNode(3);
+        List<Integer> list = postorderTraversal01(root);
+        System.out.println(list.toString());
     }
 }
