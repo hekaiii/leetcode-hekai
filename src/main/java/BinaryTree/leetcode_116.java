@@ -10,16 +10,16 @@ import java.util.Deque;
  */
 public class leetcode_116 {
 
-  public Node1 connect(Node1 root) {
+  public Node116 connect(Node116 root) {
     if (root == null) {
       return root;
     }
-    Deque<Node1> nodes = new ArrayDeque<>();
+    Deque<Node116> nodes = new ArrayDeque<>();
     nodes.add(root);
     while (!nodes.isEmpty()) {
       int size = nodes.size();
       for (int i = 0; i < size; i++) {
-        Node1 poll = nodes.poll();
+        Node116 poll = nodes.poll();
         if (i == size - 1) {
           poll.next = null;
         } else {
@@ -36,22 +36,33 @@ public class leetcode_116 {
     return root;
   }
 
+  public Node116 connect01(Node116 root) {
+    if (root == null) {
+      return root;
+    }
+    ArrayDeque<Node116> nodes = new ArrayDeque<>();
+    nodes.add(root);
+    while (!nodes.isEmpty()) {
+      int size = nodes.size();
+      for (int i = 0; i < size; i++) {
+        Node116 poll = nodes.poll();
+        if (poll.left != null) {
+          nodes.add(poll.left);
+        }
+        if (poll.right != null) {
+          nodes.add(poll.right);
+        }
+        if (i == size - 1) {
+          poll.next = null;
+        } else {
+          poll.next = nodes.peek();
+        }
+      }
+    }
+    return root;
+  }
   public static void main(String[] args) {
 
   }
 }
 
-class Node1 {
-  public int val;
-  public Node1 left;
-  public Node1 right;
-  public Node1 next;
-
-  public Node1() {}
-
-  public Node1(int _val) {
-    val = _val;
-  }
-
-
-};

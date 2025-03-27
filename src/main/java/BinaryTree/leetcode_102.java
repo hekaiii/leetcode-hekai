@@ -6,8 +6,10 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.SortedMap;
+import javax.print.DocFlavor.READER;
 
-/**
+/**  ArrayDeque是双端队列
  * @Date: 2022/4/23 21:38
  */
 public class leetcode_102 {
@@ -144,22 +146,25 @@ public class leetcode_102 {
         if (root == null) {
             return result;
         }
-        ArrayDeque<TreeNode> tree = new ArrayDeque<>();
-        tree.add(root);
-        while (tree.size() != 0) {
-            int size = tree.size();
-            ArrayList<Integer> list = new ArrayList<>();
-            for (int i = 0; i < size; i++) {
-                TreeNode pop = tree.pop();
-                list.add(pop.val);
-                if (pop.left != null) {
-                    tree.add(pop.left);
+        ArrayDeque<TreeNode> nodes = new ArrayDeque<>();
+        nodes.add(root);
+        while (!nodes.isEmpty()) {
+            List<Integer> list = new ArrayList<>();
+            int size = nodes.size();
+            while (size > 0) {
+                TreeNode poll = nodes.poll();
+                list.add(poll.val);
+                size--;
+                if (poll.left != null) {
+                    nodes.add(poll.left);
                 }
-                if (pop.right != null) {
-                    tree.add(pop.right);
+                if (poll.right != null) {
+                    nodes.add(poll.right);
+                }
+                if (size == 0) {
+                    result.add(list);
                 }
             }
-            result.add(list);
         }
         return result;
     }
@@ -167,11 +172,11 @@ public class leetcode_102 {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
-//        root.left.left = new TreeNode(4);
-//        root.left.right = new TreeNode(5);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
-        List<List<Integer>> list = levelOrder01(root);
+        List<List<Integer>> list = levelOrder03(root);
         System.out.println(String.valueOf(list));
     }
 }

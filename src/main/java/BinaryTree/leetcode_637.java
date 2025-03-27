@@ -1,5 +1,6 @@
 package BinaryTree;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -34,7 +35,34 @@ public class leetcode_637 {
     }
     return result;
   }
-
+  public static List<Double> averageOfLevels01(TreeNode root) {
+    List<Double> result = new ArrayList<>();
+    if (root == null) {
+      return result;
+    }
+    ArrayDeque<TreeNode> nodes = new ArrayDeque<>();
+    nodes.add(root);
+    while (!nodes.isEmpty()) {
+      int size = nodes.size();
+      int num = size;
+      Double count = new Double(0);
+      while (size > 0) {
+        TreeNode pop = nodes.pop();
+        count += pop.val;
+        size--;
+        if (pop.left != null) {
+          nodes.add(pop.left);
+        }
+        if (pop.right != null) {
+          nodes.add(pop.right);
+        }
+        if (size == 0) {
+          result.add(count / num);
+        }
+      }
+    }
+    return result;
+  }
   public static void main(String[] args) {
 
   }
