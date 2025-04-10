@@ -58,6 +58,5 @@ public class leetcode_101 {
         root.right = new TreeNode(2);
         root.left.right = new TreeNode(3);
         root.right.right = new TreeNode(3);
-        System.out.println(isSymmetric02(root));
     }
 }
