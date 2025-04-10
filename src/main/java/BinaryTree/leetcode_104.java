@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import java.util.ArrayDeque;
+
 /**
  * @Date: 2022/4/26 13:01
  */
@@ -28,11 +30,17 @@ public class leetcode_104 {
         return Math.max(maxDepth01(root.left), maxDepth01(root.right)) + 1;
     }
 
+    public static int maxDepth02(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(maxDepth02(root.left), maxDepth02(root.right));
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
-        System.out.println(maxDepth01(root));
+        System.out.println(maxDepth02(root));
     }
 }

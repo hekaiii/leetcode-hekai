@@ -11,7 +11,6 @@ public class leetcode_226 {
         invert(root);
         return root;
     }
-
     public void invert(TreeNode root) {
         if (root == null) {
             return;
@@ -22,7 +21,6 @@ public class leetcode_226 {
         root.left = root.right;
         root.right = temp;
     }
-
     public static TreeNode invertTree01(TreeNode root) {
         if (root == null) {
             return root;
@@ -43,6 +41,26 @@ public class leetcode_226 {
         }
         return root;
     }
+
+//    public TreeNode invertTree02(TreeNode root) {
+//
+//    }
+
+    public static TreeNode invertTree03(TreeNode root) {
+        if (root == null) {
+            return root;
+        }
+        TreeNode tmp = root.left;
+        root.left = root.right;
+        root.right = tmp;
+        if (root.left != null) {
+            invertTree03(root.left);
+        }
+        if (root.right != null) {
+            invertTree03(root.right);
+        }
+        return root;
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(4);
         root.left = new TreeNode(2);
@@ -51,7 +69,8 @@ public class leetcode_226 {
         root.left.right = new TreeNode(3);
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(9);
-        TreeNode treeNode = invertTree01(root);
+        TreeNode treeNode = invertTree03(root);
+        TreeNode.printTreeLevelOrder(treeNode);
     }
 }
 

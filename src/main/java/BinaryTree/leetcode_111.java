@@ -73,6 +73,21 @@ public class leetcode_111 {
             return 1;
         }
     }
+
+    public int minDepth11(TreeNode root) {
+        if (root == null) {
+            return 0;
+
+        }
+        if (root.left == null) {
+            return minDepth11(root.right) + 1;
+        }
+        if (root.right == null) {
+            return minDepth11(root.left) + 1;
+        }
+        return Math.min(minDepth11(root.left), minDepth11(root.right))+1;
+    }
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);

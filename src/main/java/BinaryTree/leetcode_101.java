@@ -1,5 +1,9 @@
 package BinaryTree;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Date: 2022/4/26 12:32
  * 递归和其他便利方法
@@ -49,6 +53,11 @@ public class leetcode_101 {
     }
 
     public static void main(String[] args) {
-
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(2);
+        root.left.right = new TreeNode(3);
+        root.right.right = new TreeNode(3);
+        System.out.println(isSymmetric02(root));
     }
 }
