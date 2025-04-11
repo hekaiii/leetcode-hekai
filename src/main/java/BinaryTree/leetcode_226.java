@@ -65,8 +65,10 @@ public class leetcode_226 {
         if (root == null) {
             return root;
         }
-        root.left = invertTree04(root.right);
-        root.right = invertTree04(root.left);
+        TreeNode left = invertTree04(root.right);
+        TreeNode right = invertTree04(root.left);
+        root.right = left;
+        root.left = right;
         return root;
     }
     public static void main(String[] args) {
