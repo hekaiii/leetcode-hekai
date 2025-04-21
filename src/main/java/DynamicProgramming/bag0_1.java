@@ -1,5 +1,7 @@
 package DynamicProgramming;
 
+import java.rmi.server.UID;
+
 /**
  * @Author: hekai
  * @Description:
@@ -8,27 +10,40 @@ package DynamicProgramming;
 public class bag0_1 {
   //二维dp
   public static int knapsack(int[] weight, int[] value, int bagWeight) {
-    int n = weight.length;
-    int[][] dp = new int[n][bagWeight + 1];
-
-    // 初始化：第0个物品能放下的情况
-    for (int i = weight[0]; i <= bagWeight; i++) {
-      dp[0][i] = value[0];
+    //dp[][] = int[物品种类][背包重量]
+    int[][] dp = new int[value.length][bagWeight + 1];
+    //初始化 [0][j] 第一行
+    for (int j = 0; j <= bagWeight; j++) {
+      if (j >= weight[0]) {
+        dp[0][j] = value[0];
+      }
     }
-
-    // 状态转移
-    for (int i = 1; i < n; i++) {
-      for (int j = 0; j <= bagWeight; j++) {
-        if (j < weight[i]) {
-          dp[i][j] = dp[i - 1][j]; // 不放第i个物品
+    //先遍历物品
+    for (int i = 1; i < value.length; i++) {
+      //再遍历背包重量
+      for (int j = 1; j <= bagWeight; j++) {
+        if (weight[i] > j) {
+          dp[i][j] = dp[i-1][j];
         } else {
-          dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i]); // 不放 or 放
+          dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j - weight[i]] + value[i]);
         }
       }
     }
-    return dp[n - 1][bagWeight];
+    return dp[value.length - 1][bagWeight];
   }
-
+  //一维dp
+  public static int knapsack1(int[] weight, int[] value, int bagWeight) {
+    int[] dp = new int[bagWeight + 1];
+    //先物品
+    for (int i = 0; i < weight.length; i++) {
+      //再背包空间
+      for (int j = bagWeight; j >=weight[i]; j--) {
+        //空间大于当前物品重量时，比较当前结果dp[j]（其实为不存放物品i时的最大价值）和存放当前物品i后的最大价值
+          dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
+      }
+    }
+    return dp[bagWeight];
+  }
   //一维dp
   public static int knapsack01(int[] weight, int[] value, int bagWeight) {
     int[] dp = new int[bagWeight + 1];
@@ -51,9 +66,9 @@ public class bag0_1 {
   }
 
   public static void main(String[] args) {
-    int[] weight = {3, 1, 4};
-    int[] value = {20, 15, 30};
+    int[] weight = {4, 3, 1, 4};
+    int[] value = {40, 20, 15, 30};
     int bagWeight = 4;
-    System.out.println(knapsack01(weight, value, bagWeight));
+    System.out.println(knapsack1(weight, value, bagWeight));
   }
 }
