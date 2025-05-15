@@ -17,7 +17,6 @@ public class leetcode_188 {
         dp[0][i] = 0;
       }
     }
-
     for (int i = 1; i < prices.length; i++) {
       for (int j = 1; j <= 2 * k; j++) {
         if (j == 1) {
