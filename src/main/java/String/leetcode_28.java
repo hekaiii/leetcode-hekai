@@ -25,7 +25,8 @@ package String;
  *                              例如ABABAC这个字符串，当比较到C的时候，index子串最长前缀是ABAB i子串的最长前缀是ABAC
  *                                 001230
  *                                 ABAB vs ABAC 前三个相同，第四个不同，所以C的lps位置不可能等于4了，但是从0开始又太蠢了
- *                                 所以现在回溯，找找能不能退而求其次，获得一个小于4的长度，但是呢又要满足上一个字母也是C前面的字母，即A，变成了比较A2上一次出现的位置。因为A2B2不等于A2C1，所以要找上一次A出现的位置的下一个字母能不能和C1匹配上
+ *                                 所以现在回溯，找找能不能退而求其次，获得一个小于4的长度，但是呢又要满足上一个字母也是C前面的字母，即A，
+ *                                 变成了比较A2上一次出现的位置。因为A2B2不等于A2C1，所以要找上一次A出现的位置的下一个字母能不能和C1匹配上
  *                                 由于ABAB这里的B2不等了，B2前面是A2，就找A2有没有最长前后缀，A2对应1，
  *                                 说明从第一个元素到A2组成的ABA，是一个最长公共前后缀为1的字串，1对应的坐标，其实和B2对应的坐标是相同的，因为前一个都是A
  *                                 死记硬背：ABAB ABAC = ABA + C，中间的B ABA去掉，开始比较ABAC这个串中C的值，index=B i=C开始比较。
@@ -34,29 +35,19 @@ package String;
  */
 public class leetcode_28 {
 
-  //标准答案
   public static int[] buildLPS(String pattern) {
-    int n = pattern.length();
-    int[] lps = new int[n];
-    int len = 0; // 当前最长前后缀长度
-    int i = 1;
-
-    while (i < n) {
-      if (pattern.charAt(i) == pattern.charAt(len)) {
-        len++;
-        lps[i] = len;
-        i++;
-      } else {
-        if (len != 0) {
-          len = lps[len - 1];
-          System.out.println("len:" + len);
-        } else {
-          lps[i] = 0;
-          i++;
-        }
+    int[] result = new int[pattern.length()];
+    int j = 0;
+    for (int i = 1; i < pattern.length(); i++) {
+      while (j > 0 && pattern.charAt(j) != pattern.charAt(i)) {
+        j = result[j - 1];
       }
+      if (pattern.charAt(j) == pattern.charAt(i)) {
+        j++;
+      }
+      result[i] = j;
     }
-    return lps;
+    return result;
   }
   // KMP 字符串匹配
   public static int KMP_Search(String haystack, String needle) {
@@ -85,13 +76,6 @@ public class leetcode_28 {
     }
     return -1;  // 没有匹配到
   }
-
-//  public static int strStr(String haystack, String needle) {
-//    int m = haystack.length();
-//    int n = needle.length();
-//    int[] lps = LPS(needle);
-//  }
-
   public static int[] LPS(String needle) {
     int[] lps = new int[needle.length()];
     int length = 0;
@@ -113,61 +97,32 @@ public class leetcode_28 {
     }
     return lps;
   }
-
-  public static int[] LPS01(String needle) {
-    int[] result = new int[needle.length()];
-    int index = 0;
-    int i = 1;
-    result[0] = 0;
-    while (i < needle.length()) {
-      if (needle.charAt(i) == needle.charAt(index)) {
-        index++;
-        result[i] = index;
-        i++;
-      } else {
-        if (index == 0) {
-          result[i] = 0;
-          i++;
-        } else {
-          index = result[index - 1];
-        }
+  public static int strStr(String haystack, String needle){
+    int result = -1;
+    int[] lps = buildLPS(needle);
+    int j = 0;
+    for (int i = 0; i < haystack.length(); i++) {
+      while (j > 0 && haystack.charAt(i) != needle.charAt(j)) {
+        j = lps[i - 1];
+      }
+      if (haystack.charAt(i) == needle.charAt(j)) {
+        j++;
+      }
+      if (j == needle.length()) {
+        result = i - needle.length() + 1;
+        break;
       }
     }
     return result;
   }
-  public static int strStr(String haystack, String needle) {
-    int m = haystack.length();
-    int n = needle.length();
-    int[] lps = LPS01(needle);
-
-    int i = 0;
-    int j = 0;
-    while (i < m) {
-      if (needle.charAt(j) == haystack.charAt(i)) {
-        i++;
-        j++;
-        if (j == n) {
-          return i - j;
-        }
-      } else {
-        if (j == 0) {
-          i++;
-        } else if (j != 0) {
-          j = lps[j - 1];
-        }
-      }
-    }
-    return -1;
-  }
-
   public static void main(String[] args) {
-    String haystack ="aabaaabaaac";
-    String needle ="aabaaa";
-    System.out.println(strStr(haystack, needle));
-
-//    System.out.println(Arrays.toString(lps));
-//    int index = KMP_Search(haystack, needle);
-//    System.out.println("Pattern found at index: " + index);
+    String haystack ="asadbutsad";
+    String needle ="aaabaaabaaaac";
+    int[] ints = buildLPS(needle);
+    for (int anInt : ints) {
+      System.out.print(anInt+" ");
+    }
+//    System.out.println(strStr(haystack, needle));
   }
 
 }
