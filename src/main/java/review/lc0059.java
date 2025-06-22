@@ -7,7 +7,7 @@ package review;
  */
 public class lc0059 {
   public static int[][] generateMatrix(int n) {
-    
+    return null;
   }
 
   public static void main(String[] args) {
