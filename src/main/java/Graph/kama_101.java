@@ -54,11 +54,13 @@ public class kama_101 {
 
     private static int bfs(int[][] graph, int[][] mark, int i, int j) {
         int area = 1;
+        boolean isTouched = false;
         Queue<int[]> queue = new LinkedList<int[]>();
         queue.offer(new int[]{i, j});
         mark[i][j] = 1;
         int[][] directions = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
         while (!queue.isEmpty()) {
+            //queue队列里一直有数据说明什么？这个岛还有地方没走完
             int[] poll = queue.poll();
             int i1 = poll[0];
             int i2 = poll[1];
@@ -72,16 +74,18 @@ public class kama_101 {
                     mark[nowI][nowJ] = 1;
                     area++;
                     queue.offer(new int[]{nowI, nowJ});
-                } else if (graph[nowI][nowJ] == 1 && (nowI == 0 || nowJ == 0 || nowI == graph.length - 1 || nowJ == graph[0].length-1)) {
+                } else if (nowI >= 0 && nowJ >= 0 && nowI <= graph.length - 1 && nowJ <= graph[0].length - 1 && graph[nowI][nowJ] == 1 && mark[nowI][nowJ] == 0) {
                     mark[nowI][nowJ] = 1;
                     //不应该简单粗暴的直接返回0，即便找到碰壁的岛，也应该将其每一个土地都遍历完并标记
-                    return 0;
+                    isTouched = true;
+                    queue.offer(new int[]{nowI, nowJ});
                 }
             }
         }
-        return area;
+        return isTouched ? 0 : area;
     }
 
     private static void dfs(int[][] graph, int[][] mark, int i, int j) {
+
     }
 }
