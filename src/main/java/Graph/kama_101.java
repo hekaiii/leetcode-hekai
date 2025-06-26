@@ -1,6 +1,5 @@
 package Graph;
 
-import javax.sound.sampled.Line;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
@@ -28,6 +27,12 @@ public class kama_101 {
                         "0 1 0 1 0 0 0 1 1 1\n" +
                         "1 1 1 0 0 1 0 1 1 0\n" +
                         "1 1 0 1 0 0 1 1 0 1\n";
+        String testInput1 =
+                "4 5\n" +
+                        "1 0 1 0 1\n" +
+                        "1 1 0 0 1\n" +
+                        "0 0 1 0 1\n" +
+                        "0 1 0 0 1\n";
         System.setIn(new ByteArrayInputStream(testInput.getBytes(StandardCharsets.UTF_8)));
 
         Scanner scanner = new Scanner(System.in);
@@ -40,11 +45,20 @@ public class kama_101 {
                 graph[i][j] = scanner.nextInt();
             }
         }
+        for (int i = 0; i < n; i++) {
+            dfsClear(graph, mark, i, 0);
+            dfsClear(graph, mark, i, m - 1);
+        }
+        for (int i = 0; i < m; i++) {
+            dfsClear(graph, mark, 0, i);
+            dfsClear(graph, mark, n - 1, i);
+        }
+
         for (int i = 1; i < n-1; i++) {
             for (int j = 1; j < m - 1; j++) {
-//                dfs(graph, mark, i, j);
-                if (graph[i][j] == 1 && mark[i][j] == 0) {
-                    int area = bfs(graph, mark, i, j);
+                if (graph[i][j] == 1) {
+//                    int area = bfs(graph, mark, i, j);
+                    int area = dfs(graph, mark, i, j);
                     result += area;
                 }
             }
@@ -52,6 +66,21 @@ public class kama_101 {
         System.out.println(result);
     }
 
+    private static void dfsClear(int[][] graph, int[][] mark, int i, int j) {
+        if (i < 0 || j < 0 || i >= graph.length || j >= graph[0].length || mark[i][j] == 1) {
+            return;
+        }
+        if (graph[i][j] == 1 && mark[i][j] == 0) {
+            mark[i][j] = 1;
+            graph[i][j] = 0;
+            dfsClear(graph, mark, i + 1, j);
+            dfsClear(graph, mark, i, j + 1);
+            dfsClear(graph, mark, i - 1, j);
+            dfsClear(graph, mark, i, j - 1);
+        }
+    }
+
+    //广度优先 用queue来存
     private static int bfs(int[][] graph, int[][] mark, int i, int j) {
         int area = 1;
         boolean isTouched = false;
@@ -85,7 +114,17 @@ public class kama_101 {
         return isTouched ? 0 : area;
     }
 
-    private static void dfs(int[][] graph, int[][] mark, int i, int j) {
-
+    //深度优先
+    private static int dfs(int[][] graph, int[][] mark, int i, int j) {
+        if (i < 0 || j < 0 || i >= graph.length || j >= graph[0].length || graph[i][j] == 0 || mark[i][j] ==1) {
+            return 0;
+        }
+        int area = 1;
+        mark[i][j] = 1;
+        area += dfs(graph, mark, i + 1, j)
+                + dfs(graph, mark, i, j + 1)
+                + dfs(graph, mark, i - 1, j)
+                + dfs(graph, mark, i, j - 1);
+        return area;
     }
 }
