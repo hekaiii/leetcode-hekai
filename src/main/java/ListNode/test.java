@@ -35,7 +35,7 @@ public class test {
 //    ListNode listNode = leetcode_203.removeElements03(head, 1);
 //    ListNode.print(listNode);
 //    System.out.println();
-      ListNode listNode = leetcode_206.reverseList02(head);
+      ListNode listNode = leetcode_206.reverseList(head);
       ListNode.print(listNode);
   }
   public static int get(ListNode head,int index) {
