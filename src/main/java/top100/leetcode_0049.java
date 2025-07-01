@@ -18,9 +18,12 @@ public class leetcode_0049 {
       char[] chars = str.toCharArray();
       Arrays.sort(chars);
       String s = new String(chars);
-      map.computeIfAbsent(s, k -> new ArrayList<>()).add(s);
+      if (!map.containsKey(s)) {
+        map.put(s, new ArrayList<>());
+      }
+      map.get(s).add(s);
     }
-    return new ArrayList<>()
+    return new ArrayList<>(map.values());
   }
 
   public List<List<String>> groupAnagrams01(String[] strs) {
