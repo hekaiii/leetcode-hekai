@@ -56,7 +56,7 @@ public class leetcode_15 {
             if (a > 0 && nums[a] == nums[a - 1]) {
                 continue;
             }
-            int b = a+1;
+            int b = a + 1;
             int c = nums.length - 1;
             while (b < c) {
                 int sum = nums[a] + nums[b] + nums[c];

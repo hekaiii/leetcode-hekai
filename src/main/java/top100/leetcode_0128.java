@@ -7,7 +7,7 @@ import java.util.HashSet;
  * @date 2025/7/1 19:49
  * @description TODO
  */
-public class leetcode_128 {
+public class leetcode_0128 {
     public static int longestConsecutive(int[] nums) {
         HashSet<Integer> set = new HashSet<>();
         for (int num : nums) {
