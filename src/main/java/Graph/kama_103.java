@@ -3,6 +3,7 @@ package Graph;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.jar.JarEntry;
 
@@ -64,6 +65,7 @@ public class kama_103 {
     }
     //深 递归三部曲
     private static void dfs(int[][] graph, int[][] marked, int i, int j) {
+        HashMap<Object, Object> map = new HashMap<>();
         if (marked[i][j] == 1) {
             return;
         }
